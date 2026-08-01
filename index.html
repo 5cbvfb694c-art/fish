@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#3a8bd9">
+<title>🐟小鱼记账</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;}
+html,body{height:100%;overflow:hidden;position:fixed;width:100%;}
+body{background:#f9f6f1;color:#444;display:flex;flex-direction:column;}
+.header{background:linear-gradient(135deg,#3a8bd9,#5ba3e6);color:#fff;padding:18px 20px;padding-top:calc(18px + env(safe-area-inset-top));flex-shrink:0;}
+.header-top{display:flex;align-items:center;gap:12px;margin-bottom:4px;}
+.fish-avatar{font-size:28px;}
+.title{font-size:17px;font-weight:600;}
+.tip-text{font-size:12px;opacity:0.85;}
+.total-save{font-size:24px;font-weight:700;margin-top:8px;}
+.content{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:14px;padding-bottom:calc(14px + env(safe-area-inset-bottom));}
+.card{background:#fff;border-radius:18px;padding:16px;margin-bottom:14px;box-shadow:0 2px 10px #00000006;}
+.card-title{font-size:15px;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:6px;}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+input,select{padding:10px 12px;border:1px solid #e0e8f0;border-radius:12px;background:#f5f9ff;font-size:14px;flex:1;min-width:100px;outline:none;}
+input:focus,select:focus{border-color:#4a9bd9;}
+.btn{background:linear-gradient(135deg,#4a9bd9,#3a8bd9);color:#fff;border:none;border-radius:99px;padding:10px 18px;font-size:14px;cursor:pointer;font-weight:500;}
+.btn:active{opacity:0.85;}
+.list-item{padding:11px 0;border-bottom:1px solid #f0ecf5;display:flex;justify-content:space-between;align-items:center;font-size:14px;}
+.progress-wrap{width:100%;height:10px;background:#e8f0fe;border-radius:99px;margin:8px 0;}
+.progress-bar{height:10px;background:linear-gradient(90deg,#5ba3e6,#3a8bd9);border-radius:99px;transition:0.3s;}
+.bottom-nav{position:fixed;left:0;right:0;bottom:0;background:#fff;display:flex;padding:8px 6px calc(8px + env(safe-area-inset-bottom));border-top:1px solid #e8eef5;flex-shrink:0;}
+.nav-item{flex:1;text-align:center;padding:6px 0;font-size:11px;color:#999;cursor:pointer;}
+.nav-item.active{color:#3a8bd9;font-weight:600;}
+.section{display:none;}
+.section.active{display:block;}
+.del{color:#dd6666;font-size:12px;padding:4px 8px;cursor:pointer;}
+.stat-row{display:flex;justify-content:space-between;padding:6px 0;font-size:14px;}
+.stat-label{color:#888;}
+.stat-value{font-weight:600;}
+.in{color:#34c759;}
+.out{color:#ff6b6b;}
+.splash{position:fixed;inset:0;background:linear-gradient(135deg,#3a8bd9,#5ba3e6);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;transition:opacity 0.4s;}
+.splash.hidden{opacity:0;pointer-events:none;}
+.splash .fish{font-size:56px;margin-bottom:16px;}
+.splash .msg{font-size:15px;opacity:0.9;}
+.storage-badge{position:fixed;top:calc(8px + env(safe-area-inset-top));right:12px;background:#34c759;color:#fff;padding:3px 10px;border-radius:99px;font-size:11px;z-index:100;opacity:0.9;}
+.storage-badge.warn{background:#ff9500;}
+.storage-badge.err{background:#ff3b30;}
+</style>
+</head>
+<body>
+
+<div class="splash" id="splash">
+<div class="fish">🐟</div>
+<div class="msg">正在准备数据…</div>
+</div>
+
+<div class="storage-badge" id="storageBadge">已保存 ✓</div>
+
+<div class="header">
+<div class="header-top">
+<div class="fish-avatar">🐟</div>
+<div>
+<div class="title">小鱼记账工作台</div>
+<div class="tip-text">理性消费 · 慢慢攒钱</div>
+</div>
+</div>
+<div class="total-save" id="totalSave">0 元</div>
+</div>
+
+<div class="content">
+
+<div id="saveSection" class="section active">
+<div class="card">
+<div class="card-title">💰 存钱目标</div>
+<div class="row">
+<input type="number" id="goalMoney" placeholder="目标金额">
+<button class="btn" onclick="setGoal()">设目标</button>
+</div>
+<div>距离目标：<span id="lackMoney">0</span> 元</div>
+<div class="progress-wrap"><div class="progress-bar" id="progressBar" style="width:0%"></div></div>
+<div style="font-size:13px;color:#888;">进度 <span id="progressText">0%</span></div>
+</div>
+<div class="card">
+<div class="card-title">💵 存入一笔</div>
+<div class="row">
+<input type="number" id="addSaveNum" placeholder="金额">
+<input id="saveRemark" placeholder="备注">
+<button class="btn" onclick="addSave()">存入</button>
+</div>
+<div id="saveList"></div>
+</div>
+<div class="card">
+<div class="card-title">📋 心愿清单</div>
+<div class="row">
+<input id="wishName" placeholder="想买啥">
+<input type="number" id="wishPrice" placeholder="预算">
+<button class="btn" onclick="addWish()">添加</button>
+</div>
+<div id="wishList"></div>
+</div>
+</div>
+
+<div id="billSection" class="section">
+<div class="card">
+<div class="card-title">📒 记一笔</div>
+<div class="row">
+<select id="billType"><option value="支出">支出</option><option value="收入">收入></select>
+<input type="number" id="billNum" placeholder="金额">
+</div>
+<div class="row">
+<select id="billClass">
+<option>餐饮</option><option>交通</option><option>购物</option>
+<option>护肤医美</option><option>推广支出</option><option>生活用品</option><option>杂项</option>
+<option>副业收入</option><option>自媒体收入</option>
+</select>
+<input id="billRemark" placeholder="备注">
+<button class="btn" onclick="addBill()">记录</button>
+</div>
+</div>
+<div class="card">
+<div class="card-title">📊 本月统计</div>
+<div class="stat-row"><span class="stat-label">总收入</span><span class="stat-value in" id="monthIn">0</span></div>
+<div class="stat-row"><span class="stat-label">总支出</span><span class="stat-value out" id="monthOut">0</span></div>
+<div class="stat-row"><span class="stat-label">结余</span><span class="stat-value" id="monthSurplus">0</span></div>
+</div>
+<div class="card">
+<div class="card-title">📋 明细</div>
+<div id="billList"></div>
+</div>
+</div>
+
+<div id="todoSection" class="section">
+<div class="card">
+<div class="card-title">✅ 待办</div>
+<div class="row">
+<input id="todoText" placeholder="待办事项">
+<button class="btn" onclick="addTodo()">添加</button>
+</div>
+<div id="todoList"></div>
+</div>
+</div>
+
+</div>
+
+<div class="bottom-nav">
+<div class="nav-item active" onclick="switchTab('saveSection',this)">💰 存钱</div>
+<div class="nav-item" onclick="switchTab('billSection',this)">📒 记账</div>
+<div class="nav-item" onclick="switchTab('todoSection',this)">✅ 待办</div>
+</div>
+
+<script>
+const DB_NAME="FishLedger",DB_VER=1,STORE="data";
+let dbReady=false,_db=null;
+
+function openDB(){
+ return new Promise((resolve,reject)=>{
+  if(!window.indexedDB){reject("no-idb");return;}
+  const req=indexedDB.open(DB_NAME,DB_VER);
+  req.onupgradeneeded=e=>{e.target.result.createObjectStore(STORE);};
+  req.onsuccess=e=>{_db=e.target.result;dbReady=true;resolve(_db);};
+  req.onerror=_=>reject("idb-fail");
+ });
+}
+
+async function idbGet(k){
+ if(!dbReady)await openDB();
+ return new Promise((resolve)=>{
+  try{const tx=_db.transaction(STORE,"readonly"),req=tx.objectStore(STORE).get(k);
+   req.onsuccess=()=>resolve(req.result??null);req.onerror=()=>resolve(null);}
+  catch{resolve(null);}
+ });
+}
+
+async function idbSet(k,v){
+ if(!dbReady)await openDB();
+ return new Promise((resolve)=>{
+  try{const tx=_db.transaction(STORE,"readwrite"),req=tx.objectStore(STORE).put(v,k);
+   req.onsuccess=()=>resolve(true);req.onerror=()=>resolve(false);}
+  catch{resolve(false);}
+ });
+}
+
+let saveList=[],wishList=[],billList=[],todoList=[];
+let goal=0;
+
+(async()=>{
+ if(navigator.storage&&navigator.storage.persist){await navigator.storage.persist();}
+ await openDB();
+ const s=await idbGet("all");
+ if(s){saveList=s.saveList||[];wishList=s.wishList||[];billList=s.billList||[];todoList=s.todoList||[];goal=s.goal||0;}
+ renderAll();
+ document.getElementById("splash").classList.add("hidden");
+})();
+
+let saveTimer=null;
+async function autoSave(){
+ clearTimeout(saveTimer);
+ saveTimer=setTimeout(async()=>{
+  const snap={saveList,wishList,billList,todoList,goal};
+  await idbSet("all",snap);
+  try{localStorage.setItem("fish_backup",JSON.stringify(snap));}catch{}
+ },200);
+}
+
+function setGoal(){goal=Number(document.getElementById("goalMoney").value)||0;autoSave();renderSave();}
+function addSave(){
+ let n=Number(document.getElementById("addSaveNum").value),r=document.getElementById("saveRemark").value.trim();
+ if(!n)return;saveList.push({num:n,rm:r,time:Date.now()});autoSave();renderSave();
+ document.getElementById("addSaveNum").value="";document.getElementById("saveRemark").value="";
+}
+function delSave(i){saveList.splice(i,1);autoSave();renderSave();}
+
+function addWish(){
+ let n=document.getElementById("wishName").value.trim(),p=document.getElementById("wishPrice").value;
+ if(!n)return;wishList.push({name:n,price:p});autoSave();renderWish();
+ document.getElementById("wishName").value="";document.getElementById("wishPrice").value="";
+}
+function delWish(i){wishList.splice(i,1);autoSave();renderWish();}
+
+function addBill(){
+ let t=document.getElementById("billType").value,n=Number(document.getElementById("billNum").value),
+  c=document.getElementById("billClass").value,r=document.getElementById("billRemark").value.trim();
+ if(!n)return;billList.push({type:t,num:n,cls:c,rm:r,time:Date.now()});autoSave();renderBill();
+ document.getElementById("billNum").value="";document.getElementById("billRemark").value="";
+}
+function delBill(i){billList.splice(i,1);autoSave();renderBill();}
+
+function addTodo(){
+ let t=document.getElementById("todoText").value.trim();
+ if(!t)return;todoList.push({txt:t,done:false});autoSave();renderTodo();
+ document.getElementById("todoText").value="";
+}
+function toggleTodo(i){todoList[i].done=!todoList[i].done;autoSave();renderTodo();}
+function delTodo(i){todoList.splice(i,1);autoSave();renderTodo();}
+
+function renderAll(){renderSave();renderWish();renderBill();renderTodo();}
+
+function renderSave(){
+ let total=saveList.reduce((s,v)=>s+v.num,0),lack=Math.max(0,goal-total);
+ let pct=goal>0?Math.min(100,(total/goal*100).toFixed(1)):0;
+ document.getElementById("totalSave").textContent=total.toLocaleString()+" 元";
+ document.getElementById("lackMoney").textContent=lack.toLocaleString();
+ document.getElementById("progressBar").style.width=pct+"%";
+ document.getElementById("progressText").textContent=pct+"%";
+ let h="";saveList.slice().reverse().forEach((v,i)=>{let idx=saveList.length-1-i;
+  h+=`<div class="list-item"><div>${new Date(v.time).toLocaleDateString()} ${v.rm||""} +${v.num}</div><div class="del" onclick="delSave(${idx})">删</div></div>`;
+ });document.getElementById("saveList").innerHTML=h||'<div style="color:#bbb;font-size:13px;">暂无记录</div>';
+}
+
+function renderWish(){
+ let h="";wishList.forEach((v,i)=>{
+  h+=`<div class="list-item"><div>${v.name} ¥${v.price}</div><div class="del" onclick="delWish(${i})">删</div></div>`;
+ });document.getElementById("wishList").innerHTML=h||'<div style="color:#bbb;font-size:13px;">暂无心愿</div>';
+}
+
+function renderBill(){
+ let now=new Date(),m=now.getMonth(),y=now.getFullYear(),mi=0,mo=0;
+ billList.forEach(v=>{let d=new Date(v.time);if(d.getMonth()==m&&d.getFullYear()==y){v.type=="收入"?mi+=v.num:mo+=v.num;}});
+ document.getElementById("monthIn").textContent=mi;document.getElementById("monthOut").textContent=mo;
+ document.getElementById("monthSurplus").textContent=mi-mo;
+ let h="";billList.slice().reverse().forEach((v,i)=>{let idx=billList.length-1-i;
+  let color=v.type=="收入"?"#34c759":"#ff6b6b";
+  h+=`<div class="list-item"><div style="color:${color}">${v.type==="收入"?"+":"-"}¥${v.num}</div><div style="font-size:12px;color:#888">${new Date(v.time).toLocaleDateString()} ${v.cls}</div><div class="del" onclick="delBill(${idx})">删</div></div>`;
+ });document.getElementById("billList").innerHTML=h||'<div style="color:#bbb;font-size:13px;">暂无记录</div>';
+}
+
+function renderTodo(){
+ let h="";todoList.forEach((v,i)=>{
+  h+=`<div class="list-item"><div onclick="toggleTodo(${i})" style="text-decoration:${v.done?'line-through':''};color:${v.done?'#bbb':'#444'}">${v.txt}</div><div class="del" onclick="delTodo(${i})">删</div></div>`;
+ });document.getElementById("todoList").innerHTML=h||'<div style="color:#bbb;font-size:13px;">暂无待办</div>';
+}
+
+function switchTab(id,dom){
+ document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
+ document.getElementById(id).classList.add("active");
+ document.querySelectorAll(".nav-item").forEach(n=>n.classList.remove("active"));
+ dom.classList.add("active");
+}
+
+setInterval(autoSave,10000);
+document.addEventListener("visibilitychange",()=>{if(document.hidden)autoSave()});
+window.addEventListener("pagehide",autoSave);
+</script>
+</body>
+</html>
