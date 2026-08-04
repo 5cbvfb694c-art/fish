@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍎</text></svg>">
+    <title>多囊饮食调理工作台</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: linear-gradient(135deg, #fce4ec, #f3e5f5); min-height: 100vh; padding: 20px; }
+        h1 { text-align: center; color: #c2185b; margin-bottom: 20px; font-size: 22px; }
+        .subtitle { text-align: center; color: #ad1457; font-size: 14px; margin-bottom: 20px; opacity: 0.8; }
+        .card { background: white; border-radius: 16px; padding: 20px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .card h2 { color: #ad1457; font-size: 17px; margin-bottom: 12px; }
+        .card label { display: block; color: #555; margin-bottom: 4px; font-size: 13px; }
+        .card input, .card textarea, .card select { width: 100%; padding: 10px; border: 1px solid #e0e0e0; border-radius: 10px; font-size: 15px; margin-bottom: 10px; }
+        .card textarea { height: 60px; resize: none; }
+        .btn { background: linear-gradient(135deg, #e91e63, #c2185b); color: white; border: none; padding: 12px 20px; border-radius: 10px; font-size: 15px; cursor: pointer; width: 100%; font-weight: bold; }
+        .btn:active { opacity: 0.8; }
+        .data-list { font-size: 13px; color: #555; line-height: 1.8; }
+        .data-list div { background: #fce4ec; padding: 8px 12px; border-radius: 8px; margin-bottom: 6px; }
+        .back-link { display: block; text-align: center; margin-top: 20px; color: #7b1fa2; text-decoration: none; font-size: 15px; padding: 10px; }
+        .tips { background: #fff3e0; border-left: 4px solid #ff9800; padding: 12px; border-radius: 8px; font-size: 13px; color: #e65100; margin-top: 10px; line-height: 1.6; }
+        .nav-links { display: flex; gap: 10px; margin-bottom: 20px; }
+        .nav-links a { flex: 1; text-align: center; padding: 10px; background: white; border-radius: 10px; text-decoration: none; color: #c2185b; font-size: 14px; font-weight: bold; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .nav-links a:active { opacity: 0.7; }
+    </style>
+</head>
+<body>
+
+<div class="nav-links">
+    <a href="index.html">🐟 小鱼记账</a>
+    <a href="pcos.html">🍎 调理台</a>
+</div>
+
+<h1>🍎 多囊饮食调理工作台</h1>
+<p class="subtitle">记录饮食 · 经期 · 用药 · 体征，一站式管理</p>
+
+<div class="card">
+    <h2>🍽️ 今日饮食记录</h2>
+    <label>吃了什么？</label>
+    <textarea id="food" placeholder="例如：早餐燕麦+鸡蛋，午餐糙米饭+清蒸鱼..."></textarea>
+    <label>血糖/胰岛素（可选）</label>
+    <input id="blood" placeholder="如：空腹血糖 5.2">
+    <button class="btn" onclick="save('food')">💾 保存饮食记录</button>
+</div>
+
+<div class="card">
+    <h2>🩸 经期记录</h2>
+    <label>本次月经开始日期</label>
+    <input type="date" id="period-start">
+    <label>本次月经结束日期</label>
+    <input type="date" id="period-end">
+    <label>备注（量/症状）</label>
+    <input id="period-note" placeholder="如：量少、色暗、腹痛...">
+    <button class="btn" onclick="save('period')">💾 保存经期记录</button>
+</div>
+
+<div class="card">
+    <h2>💊 用药/补剂记录</h2>
+    <label>今日用药</label>
+    <input id="med" placeholder="如：二甲双胍 500mg">
+    <label>营养补充剂</label>
+    <input id="supp" placeholder="如：肌醇 2000mg、维D 2000IU">
+    <button class="btn" onclick="save('med')">💾 保存用药记录</button>
+</div>
+
+<div class="card">
+    <h2>⚖️ 体重/体征</h2>
+    <label>今日体重（kg）</label>
+    <input id="weight" type="number" placeholder="如：60">
+    <label>腰围（cm）</label>
+    <input id="waist" type="number" placeholder="如：78">
+    <button class="btn" onclick="save('body')">💾 保存体征</button>
+</div>
+
+<div class="card">
+    <h2>📊 历史记录（<span id="count">0</span>）</h2>
+    <div class="data-list" id="data-display">暂无记录，开始记录吧～</div>
+    <button class="btn" style="background:linear-gradient(135deg,#ff7043,#e64a19); margin-top:10px;" onclick="clearAll()">🗑️ 清空所有数据</button>
+</div>
+
+<div class="tips">
+    💡 <b>饮食建议</b>：多吃全谷物、绿叶菜、优质蛋白；少吃精制碳水、高糖饮料、油炸食品。每周运动150分钟以上。
+</div>
+
+<a class="back-link" href="index.html">← 返回小鱼记账</a>
+
+<script>
+    function save(type) {
+        const data = JSON.parse(localStorage.getItem('pcos_data') || '[]');
+        const now = new Date().toLocaleString('zh-CN');
+        let entry = { time: now, type: type };
+
+        if (type === 'food') {
+            entry.detail = document.getElementById('food').value + (document.getElementById('blood').value ? ' | ' + document.getElementById('blood').value : '');
+            document.getElementById('food').value = '';
+            document.getElementById('blood').value = '';
+        } else if (type === 'period') {
+            entry.detail = document.getElementById('period-start').value + ' ~ ' + document.getElementById('period-end').value + ' | ' + document.getElementById('period-note').value;
+            document.getElementById('period-start').value = '';
+            document.getElementById('period-end').value = '';
+            document.getElementById('period-note').value = '';
+        } else if (type === 'med') {
+            entry.detail = document.getElementById('med').value + ' | ' + document.getElementById('supp').value;
+            document.getElementById('med').value = '';
+            document.getElementById('supp').value = '';
+        } else if (type === 'body') {
+            entry.detail = '体重: ' + document.getElementById('weight').value + 'kg | 腰围: ' + document.getElementById('waist').value + 'cm';
+            document.getElementById('weight').value = '';
+            document.getElementById('waist').value = '';
+        }
+
+        if (!entry.detail || entry.detail === ' | ') { alert('请先填写内容哦～'); return; }
+        data.push(entry);
+        localStorage.setItem('pcos_data', JSON.stringify(data));
+        alert('✅ 已保存！');
+        load();
+    }
+
+    function load() {
+        const data = JSON.parse(localStorage.getItem('pcos_data') || '[]');
+        document.getElementById('count').innerText = data.length;
+        if (data.length === 0) { document.getElementById('data-display').innerHTML = '暂无记录，开始记录吧～'; return; }
+        document.getElementById('data-display').innerHTML = data.slice().reverse().map(d =>
+            '<div>📅 ' + d.time + '<br>📌 [' + {food:'饮食',period:'经期',med:'用药',body:'体征'}[d.type] + '] ' + d.detail + '</div>'
+        ).join('');
+    }
+
+    function clearAll() {
+        if (confirm('确定要清空所有记录吗？')) {
+            localStorage.removeItem('pcos_data');
+            load();
+        }
+    }
+
+    load();
+</script>
+</body>
+</html>
+
