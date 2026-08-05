@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="多囊石榴台">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='40%25' r='60%25'%3E%3Cstop offset='0%25' stop-color='%23ff6b81'/%3E%3Cstop offset='60%25' stop-color='%23e91e63'/%3E%3Cstop offset='100%25' stop-color='%23c9405a'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='180' height='180' rx='40' fill='url(%23g)'/%3E%3Cpath d='M65 55 Q90 25 115 55 Q120 80 105 100 Q90 115 75 100 Q60 80 65 55Z' fill='%23b71c4c' opacity='0.95'/%3E%3Ccircle cx='78' cy='68' r='8' fill='%23ff1744' opacity='0.85'/%3E%3Ccircle cx='95' cy='62' r='6' fill='%23ff1744' opacity='0.85'/%3E%3Ccircle cx='88' cy='78' r='7' fill='%23ff1744' opacity='0.85'/%3E%3Ccircle cx='102' cy='75' r='5' fill='%23ff1744' opacity='0.85'/%3E%3Ccircle cx='72' cy='82' r='4' fill='%23ff5252' opacity='0.9'/%3E%3Ccircle cx='108' cy='68' r='4' fill='%23ff5252' opacity='0.9'/%3E%3Ccircle cx='82' cy='92' r='5' fill='%23ff5252' opacity='0.9'/%3E%3Ccircle cx='98' cy='90' r='4' fill='%23ff5252' opacity='0.9'/%3E%3Ccircle cx='90' cy='55' r='3' fill='%23ffffff' opacity='0.7'/%3E%3Ccircle cx='75' cy='58' r='2' fill='%23ffffff' opacity='0.6'/%3E%3Ccircle cx='105' cy='55' r='2' fill='%23ffffff' opacity='0.6'/%3E%3Cellipse cx='90' cy='38' rx='16' ry='10' fill='%234caf50' opacity='0.85'/%3E%3Cellipse cx='90' cy='35' rx='12' ry='7' fill='%238bc34a' opacity='0.9'/%3E%3Cpolygon points='90,22 93,32 88,30 85,35 90,28 95,35 92,30 90,22' fill='%23ffd700'/%3E%3Cpolygon points='78,30 80,38 76,36 73,40 78,34 82,40 79,36 78,30' fill='%23ffd700' opacity='0.8'/%3E%3Cpolygon points='102,30 104,38 100,36 97,40 102,34 106,40 103,36 102,30' fill='%23ffd700' opacity='0.8'/%3E%3Cpolygon points='85,20 87,28 83,26 80,30 85,24 89,30 86,26 85,20' fill='%23ffd700' opacity='0.7'/%3E%3Cpolygon points='95,20 97,28 93,26 90,30 95,24 99,30 96,26 95,20' fill='%23ffd700' opacity='0.7'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='40%25' r='60%25'%3E%3Cstop offset='0%25' stop-color='%23ff6b81'/%3E%3Cstop offset='60%25' stop-color='%23e91e63'/%3E%3Cstop offset='100%25' stop-color='%23c9405a'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='180' height='180' rx='40' fill='url(%23g)'/%3E%3Cpath d='M65 55 Q90 25 115 55 Q120 80 105 100 Q90 115 75 100 Q60 80 65 55Z' fill='%23b71c4c' opacity='0.95'/%3E%3Ccircle cx='78' cy='68' r='8' fill='%23ff1744' opacity='0.85'/%3E%3Ccircle cx='95' cy='62' r='6' fill='%23ff1744' opacity='0.85'/%3E%3Ccircle cx='88' cy='78' r='7' fill='%23ff1744' opacity='0.85'/%3E%3Ccircle cx='102' cy='75' r='5' fill='%23ff1744' opacity='0.85'/%3E%3Ccircle cx='72' cy='82' r='4' fill='%23ff5252' opacity='0.9'/%3E%3Ccircle cx='108' cy='68' r='4' fill='%23ff5252' opacity='0.9'/%3E%3Ccircle cx='82' cy='92' r='5' fill='%23ff5252' opacity='0.9'/%3E%3Ccircle cx='98' cy='90' r='4' fill='%23ff5252' opacity='0.9'/%3E%3Ccircle cx='90' cy='55' r='3' fill='%23ffffff' opacity='0.7'/%3E%3Ccircle cx='75' cy='58' r='2' fill='%23ffffff' opacity='0.6'/%3E%3Ccircle cx='105' cy='55' r='2' fill='%23ffffff' opacity='0.6'/%3E%3Cellipse cx='90' cy='38' rx='16' ry='10' fill='%234caf50' opacity='0.85'/%3E%3Cellipse cx='90' cy='35' rx='12' ry='7' fill='%238bc34a' opacity='0.9'/%3E%3Cpolygon points='90,22 93,32 88,30 85,35 90,28 95,35 92,30 90,22' fill='%23ffd700'/%3E%3Cpolygon points='78,30 80,38 76,36 73,40 78,34 82,40 79,36 78,30' fill='%23ffd700' opacity='0.8'/%3E%3Cpolygon points='102,30 104,38 100,36 97,40 102,34 106,40 103,36 102,30' fill='%23ffd700' opacity='0.8'/%3E%3C/svg%3E">
+<title>多囊石榴台</title>
+<style>
+:root {
+  --pomegranate-50:#fdf2f4;--pomegranate-100:#fce4e8;--pomegranate-200:#f8c8d0;
+  --pomegranate-300:#f0a0b0;--pomegranate-400:#e07085;--pomegranate-500:#c9405a;
+  --pomegranate-600:#b03048;--pomegranate-700:#902538;--pomegranate-800:#701828;
+  --gold:#d4a853;--shadow:0 2px 12px rgba(180,40,70,.12);--radius:16px;--radius-sm:10px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:linear-gradient(160deg,#fdf2f4 0%,#fce4e8 30%,#f8c8d0 60%,#e07085 100%);min-height:100vh;color:#3a1a22;overflow-x:hidden;padding-bottom:80px}
+.status-bar{height:36px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(135deg,var(--pomegranate-700),var(--pomegranate-500));position:sticky;top:0;z-index:100}
+.app-header{background:linear-gradient(135deg,var(--pomegranate-600),var(--pomegranate-400));padding:14px 18px 18px;color:#fff;position:relative;overflow:hidden}
+.app-header h1{font-size:20px;font-weight:700;display:flex;align-items:center;gap:6px}
+.app-header .subtitle{font-size:12px;opacity:.85;margin-top:4px}
+.header-actions{display:flex;gap:8px;margin-top:12px}
+.header-btn{background:rgba(255,255,255,.2);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.3);color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;cursor:pointer;font-family:inherit}
+.header-btn:active{transform:scale(.95)}
+.bottom-tab{position:fixed;bottom:0;left:0;right:0;height:70px;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);display:flex;justify-content:flex-start;align-items:center;border-top:1px solid rgba(200,80,100,.15);z-index:100;overflow-x:auto;scrollbar-width:none;padding:0 2px}
+.bottom-tab::-webkit-scrollbar{display:none}
+.tab-item{display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;padding:6px 4px;border-radius:10px;min-width:54px;flex-shrink:0;transition:all .2s}
+.tab-item .icon{font-size:20px}
+.tab-item .label{font-size:9px;color:#888;font-weight:500}
+.tab-item.active .label{color:var(--pomegranate-600);font-weight:700}
+.tab-item.active .icon{transform:scale(1.2)}
+.tab-item:active{transform:scale(.92)}
+.page{display:none;padding:14px;animation:fadeIn .3s ease}
+.page.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.card{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-radius:var(--radius);padding:16px;margin-bottom:14px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.6)}
+.card-title{font-size:15px;font-weight:700;color:var(--pomegranate-700);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.stat-item{background:rgba(255,255,255,.92);border-radius:var(--radius-sm);padding:12px 8px;text-align:center;box-shadow:var(--shadow)}
+.stat-num{font-size:22px;font-weight:800;background:linear-gradient(135deg,var(--pomegranate-600),var(--pomegranate-400));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-label{font-size:11px;color:#888;margin-top:2px}
+.task-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #f5e8ea;cursor:pointer}
+.task-item:last-child{border-bottom:none}
+.task-check{width:24px;height:24px;border-radius:50%;border:2px solid var(--pomegranate-300);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;transition:all .2s}
+.task-check.done{background:var(--pomegranate-500);border-color:var(--pomegranate-500);color:#fff}
+.task-text{font-size:14px;transition:all .2s}
+.task-text.done{text-decoration:line-through;color:#bbb}
+.task-time{font-size:11px;color:#999;margin-top:2px}
+.task-del{width:28px;height:28px;border:none;background:#fce4e8;border-radius:50%;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s;flex-shrink:0}
+.task-item:active .task-del{opacity:1}
+.add-task-row{display:flex;gap:8px;margin-top:10px;padding-top:10px;border-top:2px dashed var(--pomegranate-200)}
+.add-task-input{flex:1;border:1.5px solid var(--pomegranate-200);border-radius:10px;padding:8px 12px;font-size:13px;outline:none;font-family:inherit}
+.add-task-input:focus{border-color:var(--pomegranate-400)}
+.add-task-time{width:80px;border:1.5px solid var(--pomegranate-200);border-radius:10px;padding:8px;font-size:13px;outline:none;font-family:inherit}
+.add-task-btn{width:40px;border:none;background:linear-gradient(135deg,var(--pomegranate-400),var(--pomegranate-600));color:#fff;border-radius:10px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.water-tracker{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.water-cup{width:36px;height:36px;border-radius:50%;border:2px solid var(--pomegranate-200);display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;transition:all .2s}
+.water-cup.filled{background:linear-gradient(135deg,#81d4fa,#4fc3f7);border-color:#29b6f6}
+.water-cup:active{transform:scale(.9)}
+.cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.cal-nav{display:flex;align-items:center;gap:10px}
+.cal-btn{width:32px;height:32px;border:1.5px solid var(--pomegranate-300);background:#fff;border-radius:8px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--pomegranate-600)}
+.cal-month{font-size:16px;font-weight:700;color:var(--pomegranate-700)}
+.cal-weekdays{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:4px}
+.cal-row{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:2px}
+.cal-cell{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;position:relative;border:2px solid transparent;transition:all .15s}
+.cal-cell.selected{border-color:var(--pomegranate-500);background:var(--pomegranate-50)}
+.cal-cell.today{background:linear-gradient(135deg,var(--pomegranate-400),var(--pomegranate-600));color:#fff;box-shadow:0 2px 8px rgba(200,60,90,.3)}
+.cal-cell.period{background:#fce4ec;color:var(--pomegranate-700)}
+.cal-cell.period-start{background:linear-gradient(135deg,#e07085,#c9405a);color:#fff}
+.cal-cell.fertile{background:#e8f5e9;color:#2e7d32}
+.cal-cell.predicted{background:#fff3e0;color:#e65100;border:2px dashed #e65100}
+.cal-cell .dot{width:4px;height:4px;border-radius:50%;background:var(--pomegranate-500);margin-top:1px}
+.cal-cell.today .dot{background:#fff}
+.period-action-panel{background:linear-gradient(135deg,#fce4ec,#f8c8d0);border-radius:var(--radius-sm);padding:14px;margin-bottom:12px;display:none}
+.period-action-panel.show{display:block;animation:fadeIn .3s ease}
+.period-action-panel h4{font-size:13px;color:var(--pomegranate-700);margin-bottom:8px}
+.action-btns{display:flex;gap:8px;flex-wrap:wrap}
+.action-btn{flex:1;min-width:110px;padding:10px 8px;border-radius:10px;border:none;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit;color:#fff;text-align:center}
+.action-btn.start{background:linear-gradient(135deg,#e07085,#c9405a)}
+.action-btn.end{background:linear-gradient(135deg,#f48fb1,#e91e63)}
+.action-btn.single{background:linear-gradient(135deg,#ce93d8,#9c27b0)}
+.action-btn.clear{background:#fff0f0;color:#c0392b;border:1px solid #ffd0d0}
+.action-btn:active{transform:scale(.95)}
+.step-hint{background:var(--pomegranate-50);border:1.5px dashed var(--pomegranate-300);border-radius:10px;padding:10px 14px;margin-bottom:12px;font-size:12px;color:var(--pomegranate-600);line-height:1.8}
+.period-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.period-stat{text-align:center;background:rgba(255,255,255,.7);border-radius:8px;padding:8px 4px}
+.period-stat .ps-num{font-size:18px;font-weight:800;color:var(--pomegranate-600)}
+.period-stat .ps-label{font-size:10px;color:#888;margin-top:2px}
+.history-item{font-size:12px;color:#666;padding:4px 0;border-bottom:1px solid #f0e0e3;display:flex;justify-content:space-between}
+.legend-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+.legend-item{display:flex;align-items:center;gap:4px;font-size:11px;color:#777}
+.legend-dot{width:12px;height:12px;border-radius:4px}
+.recipe-switcher{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.recipe-label{font-size:13px;color:#666;white-space:nowrap}
+.recipe-select{flex:1;border:1.5px solid var(--pomegranate-300);border-radius:10px;padding:6px 10px;font-size:13px;outline:none;background:#fff;color:var(--pomegranate-700);font-weight:600;font-family:inherit;max-width:160px}
+.refresh-btn{background:linear-gradient(135deg,var(--pomegranate-400),var(--pomegranate-600));color:#fff;border:none;border-radius:10px;padding:6px 12px;font-size:13px;cursor:pointer;white-space:nowrap}
+.refresh-btn:active{transform:scale(.95)}
+.meal-section{margin-bottom:14px}
+.meal-header{display:flex;align-items:center;gap:8px;margin-bottom:6px;padding:4px 0;border-bottom:2px solid var(--pomegranate-100)}
+.meal-icon{font-size:18px}
+.meal-name{font-size:14px;font-weight:700;color:var(--pomegranate-700)}
+.meal-time{font-size:11px;color:#999;margin-left:auto}
+.food-tag{display:inline-block;background:var(--pomegranate-50);border:1px solid var(--pomegranate-200);border-radius:6px;padding:2px 8px;margin:2px 4px 2px 0;font-size:12px;color:var(--pomegranate-600)}
+.filter-tabs{display:flex;gap:6px;overflow-x:auto;margin-bottom:12px;padding-bottom:2px}
+.filter-tab{white-space:nowrap;padding:5px 14px;border-radius:20px;font-size:12px;border:1.5px solid var(--pomegranate-300);background:rgba(255,255,255,.8);color:var(--pomegranate-600);cursor:pointer;font-weight:600;flex-shrink:0}
+.filter-tab.active{background:linear-gradient(135deg,var(--pomegranate-400),var(--pomegranate-600));color:#fff;border-color:transparent}
+.topic-card{background:rgba(255,255,255,.95);border-radius:var(--radius);padding:14px;margin-bottom:12px;box-shadow:var(--shadow);border-left:4px solid var(--pomegranate-400);cursor:pointer;transition:all .25s}
+.topic-card:active{transform:scale(.98)}
+.topic-header{display:flex;align-items:center;gap:8px}
+.topic-cat{font-size:10px;padding:2px 8px;border-radius:10px;font-weight:600;white-space:nowrap}
+.cat-science{background:#e8eaf6;color:#3949ab}
+.cat-recipe{background:#e8f5e9;color:#2e7d32}
+.cat-life{background:#fff3e0;color:#e65100}
+.cat-story{background:#fce4ec;color:#c62828}
+.cat-myth{background:#f3e5f5;color:#6a1b9a}
+.cat-series{background:#e0f7fa;color:#00695c}
+.topic-title{font-size:14px;font-weight:700;color:#333;flex:1}
+.topic-body{display:none;margin-top:10px;padding-top:10px;border-top:1px solid #f0e0e3}
+.topic-body.open{display:block;animation:fadeIn .3s ease}
+.topic-script{font-size:12.5px;color:#555;line-height:1.8;background:var(--pomegranate-50);padding:10px;border-radius:8px;margin-top:6px;white-space:pre-line}
+.copy-btn{background:var(--pomegranate-100);border:1px solid var(--pomegranate-300);color:var(--pomegranate-600);padding:4px 10px;border-radius:6px;font-size:11px;cursor:pointer;margin-top:6px}
+.copy-btn:active{background:var(--pomegranate-200)}
+.reminder-item{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid #f5e8ea}
+.reminder-item:last-child{border-bottom:none}
+.reminder-name{font-size:13px;font-weight:600;color:#444}
+.reminder-time{font-size:11px;color:#999;margin-top:2px}
+.switch{width:44px;height:26px;background:#ddd;border-radius:13px;position:relative;cursor:pointer;transition:background .2s;flex-shrink:0}
+.switch.on{background:linear-gradient(135deg,var(--pomegranate-400),var(--pomegranate-600))}
+.switch::after{content:'';position:absolute;width:22px;height:22px;background:#fff;border-radius:50%;top:2px;left:2px;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.switch.on::after{transform:translateX(18px)}
+.knowledge-card{background:rgba(255,255,255,.92);border-radius:var(--radius-sm);padding:12px 14px;margin-bottom:10px;box-shadow:var(--shadow);border-left:3px solid var(--gold)}
+.knowledge-card h4{font-size:13px;color:var(--pomegranate-700);margin-bottom:4px}
+.knowledge-card p{font-size:12px;color:#666;line-height:1.6}
+.difficulty{font-size:9px;padding:1px 6px;border-radius:8px;margin-left:6px;font-weight:600}
+.diff-beginner{background:#e8f5e9;color:#2e7d32}
+.diff-intermediate{background:#fff3e0;color:#e65100}
+.diff-advanced{background:#fce4ec;color:#c62828}
+.compliance-item{background:rgba(255,255,255,.92);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:8px;font-size:13px;line-height:1.8}
+.compliance-item .wrong{color:#c0392b;font-weight:600}
+.compliance-item .right{color:#2e7d32;font-weight:600}
+.food-cat{margin-bottom:14px}
+.food-cat-title{font-size:13px;font-weight:700;color:var(--pomegranate-600);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.food-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+.food-item{background:var(--pomegranate-50);border:1px solid var(--pomegranate-100);border-radius:8px;padding:6px 10px;font-size:12px;color:#555;display:flex;align-items:center;gap:4px}
+.food-item.bad{background:#fff0f0;border-color:#ffd0d0;color:#c0392b}
+.food-item.caution{background:#fff8e1;border-color:#ffd54f;color:#f57f17}
+.data-export-row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.data-export-btn{flex:1;min-width:90px;padding:10px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;border:none;display:flex;align-items:center;justify-content:center;gap:4px;color:#fff;font-family:inherit}
+.btn-export{background:linear-gradient(135deg,#42a5f5,#1e88e5)}
+.btn-import{background:linear-gradient(135deg,#66bb6a,#43a047)}
+.btn-reset{background:linear-gradient(135deg,#ef5350,#e53935)}
+input[type=file]{display:none}
+.progress-bar{height:8px;background:var(--pomegranate-100);border-radius:4px;overflow:hidden;margin:6px 0}
+.progress-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--pomegranate-400),var(--pomegranate-600))}
+.toast{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.8);background:rgba(60,20,30,.85);color:#fff;padding:12px 24px;border-radius:12px;font-size:14px;z-index:300;opacity:0;pointer-events:none;transition:all .3s}
+.toast.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.4);z-index:200;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:20px;padding:24px;margin:20px;max-width:340px;width:100%;text-align:center}
+.modal h3{font-size:16px;color:var(--pomegranate-700);margin-bottom:6px}
+.modal p{font-size:13px;color:#666;margin-bottom:16px}
+.modal-actions{display:flex;gap:10px}
+.modal-btn{flex:1;padding:10px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;border:none;font-family:inherit;color:#fff}
+.modal-btn.primary{background:linear-gradient(135deg,var(--pomegranate-400),var(--pomegranate-600))}
+.modal-btn.secondary{background:var(--pomegranate-100);color:var(--pomegranate-600)}
+.modal-btn:active{transform:scale(.96)}
+@media(min-width:600px){body{max-width:480px;margin:0 auto}.bottom-tab{max-width:480px;margin:0 auto}}
+</style>
+</head>
+<body>
+
+<div class="status-bar"><span class="time" id="statusTime"></span><span>📶 📡 🔋</span></div>
+
+<div class="app-header">
+  <h1>🍎 多囊石榴台</h1>
+  <div class="subtitle">饮食管理 · 经期追踪 · 抖音选题 · AI助手 · 一站式工作台</div>
+  <div class="header-actions">
+    <button class="header-btn" onclick="refreshAll()">🔄 全部刷新</button>
+    <button class="header-btn" onclick="showToast('数据已同步 ✅')">☁️ 同步</button>
+  </div>
+</div>
+
+<!-- 首页 -->
+<div class="page active" id="page-home">
+  <div class="stats-row">
+    <div class="stat-item"><div class="stat-num" id="homeFans">0</div><div class="stat-label">粉丝数</div></div>
+    <div class="stat-item"><div class="stat-num" id="homeComplete">0%</div><div class="stat-label">今日完成</div></div>
+    <div class="stat-item"><div class="stat-num" id="homePeriod">--</div><div class="stat-label">距经期(天)</div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">✅ 今日任务 <span style="font-size:11px;color:#999;font-weight:400;" id="taskProgress"></span></div>
+    <div id="taskList"></div>
+    <div class="add-task-row">
+      <input class="add-task-input" id="newTaskText" placeholder="输入新任务...">
+      <input class="add-task-time" id="newTaskTime" type="time" value="09:00">
+      <button class="add-task-btn" onclick="addTask()">＋</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">💧 喝水追踪 <span style="font-size:11px;color:#999;font-weight:400;" id="waterText">0/8杯</span></div>
+    <div class="water-tracker" id="waterTracker"></div>
+  </div>
+  <div class="card">
+    <div class="card-title">🍽️ 今日食谱</div>
+    <div id="homeRecipe"></div>
+    <div style="text-align:center;margin-top:8px"><span style="font-size:11px;background:var(--pomegranate-500);color:#fff;padding:4px 12px;border-radius:12px;cursor:pointer" onclick="switchTab('recipe',null)">查看完整食谱 →</span></div>
+  </div>
+  <div class="card">
+    <div class="card-title">⏰ 提醒设置</div>
+    <div id="reminderList"></div>
+  </div>
+</div>
+
+<!-- 日历页 -->
+<div class="page" id="page-calendar">
+  <div class="card">
+    <div class="card-title">🩸 经期日历</div>
+    <div class="step-hint" id="stepHint">💡 <strong>三步记录：</strong>①点开始日期 → ②点"设为经期开始" → ③点结束日期 → 点"设为经期结束"</div>
+    <div class="cal-header">
+      <div class="cal-nav">
+        <button class="cal-btn" onclick="changeMonth(-1)">◀</button>
+        <span class="cal-month" id="calMonth"></span>
+        <button class="cal-btn" onclick="changeMonth(1)">▶</button>
+      </div>
+      <button class="refresh-btn" onclick="clearAllPeriods()" style="background:#fff0f0;color:#c0392b;border:1px solid #ffd0d0">🗑 清除</button>
+    </div>
+    <div class="period-action-panel" id="periodPanel">
+      <h4 id="panelDate"></h4>
+      <div class="action-btns">
+        <button class="action-btn start" onclick="markPeriodStart()">🔴 经期开始</button>
+        <button class="action-btn end" onclick="markPeriodEnd()">🟠 经期结束</button>
+        <button class="action-btn single" onclick="markSingleDay()">🟣 单天经期</button>
+        <button class="action-btn clear" onclick="clearSelectedDate()">❌ 清除该天</button>
+      </div>
+    </div>
+    <div class="cal-weekdays">
+      <span style="text-align:center;font-size:11px;font-weight:700;color:#999;padding:4px 0">日</span>
+      <span style="text-align:center;font-size:11px;font-weight:700;color:#999;padding:4px 0">一</span>
+      <span style="text-align:center;font-size:11px;font-weight:700;color:#999;padding:4px 0">二</span>
+      <span style="text-align:center;font-size:11px;font-weight:700;color:#999;padding:4px 0">三</span>
+      <span style="text-align:center;font-size:11px;font-weight:700;color:#999;padding:4px 0">四</span>
+      <span style="text-align:center;font-size:11px;font-weight:700;color:#999;padding:4px 0">五</span>
+      <span style="text-align:center;font-size:11px;font-weight:700;color:#999;padding:4px 0">六</span>
+    </div>
+    <div id="calBody"></div>
+    <div class="legend-row">
+      <div class="legend-item"><div class="legend-dot" style="background:#c9405a"></div>经期</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#e8f5e9;border:1px solid #2e7d32"></div>排卵期</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#fff3e0;border:2px dashed #e65100"></div>预测经期</div>
+      <div class="legend-item"><div class="legend-dot" style="background:linear-gradient(135deg,#e07085,#c9405a)"></div>今日</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">📊 经期分析</div>
+    <div class="period-stats">
+      <div class="period-stat"><div class="ps-num" id="cycleAvg">--</div><div class="ps-label">平均周期</div></div>
+      <div class="period-stat"><div class="ps-num" id="durationAvg">--</div><div class="ps-label">平均经期</div></div>
+      <div class="period-stat"><div class="ps-num" id="regularity">--</div><div class="ps-label">规律性</div></div>
+    </div>
+    <div style="margin-top:12px">
+      <div style="font-size:12px;color:#666;margin-bottom:4px">下次经期预计</div>
+      <div style="font-size:16px;font-weight:700;color:var(--pomegranate-600)" id="nextPeriodDate">尚未记录</div>
+      <div style="font-size:12px;color:#999;margin-top:4px" id="nextPeriodCountdown"></div>
+    </div>
+    <div style="margin-top:12px">
+      <div style="font-size:12px;color:#666;margin-bottom:4px">历史记录</div>
+      <div id="periodHistory"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 食谱页 -->
+<div class="page" id="page-recipe">
+  <div class="card">
+    <div class="recipe-switcher">
+      <span class="recipe-label">📋 方案：</span>
+      <select class="recipe-select" id="recipeSelect" onchange="loadRecipe()"></select>
+      <button class="refresh-btn" onclick="randomRecipe()">🎲 随机</button>
+    </div>
+    <div id="recipeContent"></div>
+  </div>
+</div>
+
+<!-- 选题页 -->
+<div class="page" id="page-topics">
+  <div class="filter-tabs" id="topicFilters"></div>
+  <div id="topicList"></div>
+</div>
+
+<!-- AI页 -->
+<div class="page" id="page-ai">
+  <div class="card">
+    <div class="card-title">🤖 DeepSeek AI 设置</div>
+    <div style="font-size:12px;color:#666;margin-bottom:8px">DeepSeek API Key（仅存本地浏览器）</div>
+    <div style="display:flex;gap:8px;margin-bottom:8px">
+      <input id="apiKeyInput" type="password" placeholder="sk-..." style="flex:1;border:1.5px solid var(--pomegranate-300);border-radius:10px;padding:8px 12px;font-size:13px;outline:none;font-family:inherit">
+      <button class="action-btn start" style="min-width:70px" onclick="saveApiKey()">💾 保存</button>
+      <button class="action-btn end" style="min-width:70px" onclick="testConnection()">🔍 测试</button>
+      <button class="action-btn single" style="min-width:60px" onclick="toggleKeyVisibility()">👁</button>
+    </div>
+    <div id="apiStatus" style="font-size:11px;color:#999"></div>
+  </div>
+  <div class="card">
+    <div class="card-title">💡 生成选题+脚本</div>
+    <div style="font-size:12px;color:#666;margin-bottom:8px">告诉AI你想做什么方向的内容，它会自动产出标题+口播脚本</div>
+    <textarea id="topicPrompt" placeholder="例：帮我生成3个多囊胰岛素抵抗方向的爆款选题，每个配30秒口播脚本" style="width:100%;height:60px;border:1.5px solid var(--pomegranate-200);border-radius:10px;padding:8px;font-size:12px;outline:none;font-family:inherit;resize:none;margin-bottom:8px"></textarea>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="action-btn start" onclick="generateTopic()">🪄 生成</button>
+      <button class="action-btn single" onclick="batchGenerate()">📋 批量3条</button>
+      <button class="action-btn end" onclick="viralStyle()">🔥 爆款风格</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">🍽️ AI定制今日食谱</div>
+    <div style="font-size:12px;color:#666;margin-bottom:8px">描述你的需求，AI为你定制三餐</div>
+    <textarea id="recipePrompt" placeholder="例：我是多囊，经期后第5天，想抗炎+补铁，不要海鲜，请配今天的三餐+加餐" style="width:100%;height:50px;border:1.5px solid var(--pomegranate-200);border-radius:10px;padding:8px;font-size:12px;outline:none;font-family:inherit;resize:none;margin-bottom:8px"></textarea>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="action-btn start" onclick="generateRecipe()">🍳 生成食谱</button>
+      <button class="action-btn single" onclick="smartMeal()">⚡ 智能配餐</button>
+      <button class="action-btn end" onclick="antiInflammatory()">🫐 抗炎优先</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">📊 经期数据解读</div>
+    <div style="font-size:12px;color:#666;margin-bottom:8px">先在「日历」页记录至少2次经期，再点下方按钮让AI分析</div>
+    <button class="action-btn start" onclick="analyzePeriod()" style="width:100%">🔬 AI解读我的经期数据</button>
+  </div>
+  <div class="card">
+    <div class="card-title">📸 拍照识食物</div>
+    <div style="font-size:12px;color:#666;margin-bottom:8px">上传一张食物照片，AI识别并评估多囊友好度</div>
+    <input type="file" id="foodImageInput" accept="image/*" style="display:none" onchange="analyzeFoodImage(event)">
+    <button class="action-btn start" onclick="document.getElementById('foodImageInput').click()" style="width:100%">📷 选择食物照片</button>
+  </div>
+  <div class="card">
+    <div class="card-title">💬 自由对话</div>
+    <div style="font-size:12px;color:#666;margin-bottom:8px">问AI任何关于多囊/饮食/抖音运营的问题</div>
+    <div id="chatHistory" style="max-height:200px;overflow-y:auto;margin-bottom:8px;font-size:12px;line-height:1.7"></div>
+    <div style="display:flex;gap:8px">
+      <input id="chatInput" placeholder="输入问题..." style="flex:1;border:1.5px solid var(--pomegranate-200);border-radius:10px;padding:8px 12px;font-size:13px;outline:none;font-family:inherit" onkeydown="if(event.key==='Enter')sendChat()">
+      <button class="action-btn start" onclick="sendChat()">发送</button>
+    </div>
+  </div>
+  <div id="aiResult" style="display:none" class="card">
+    <div class="card-title">🤖 AI回复</div>
+    <div id="aiResultContent" style="font-size:13px;color:#444;line-height:1.8;white-space:pre-line"></div>
+    <button class="copy-btn" onclick="copyAiResult()">📋 复制全部</button>
+  </div>
+</div>
+
+<!-- 知识页 -->
+<div class="page" id="page-knowledge">
+  <div class="card"><div class="card-title">🧠 多囊知识速查卡</div><div id="knowledgeList"></div></div>
+  <div class="card"><div class="card-title">⚠️ 合规红线（发视频前必看）</div><div id="complianceList"></div></div>
+</div>
+
+<!-- 食材页 -->
+<div class="page" id="page-foods">
+  <div class="card">
+    <div class="card-title">✅ 推荐食材</div>
+    <div class="food-cat"><div class="food-cat-title">🌾 主食类</div><div class="food-grid" id="foodStaple"></div></div>
+    <div class="food-cat"><div class="food-cat-title">🥩 蛋白质</div><div class="food-grid" id="foodProtein"></div></div>
+    <div class="food-cat"><div class="food-cat-title">🥬 蔬菜类</div><div class="food-grid" id="foodVeg"></div></div>
+    <div class="food-cat"><div class="food-cat-title">🍓 水果类</div><div class="food-grid" id="foodFruit"></div></div>
+    <div class="food-cat"><div class="food-cat-title">🥜 坚果油脂</div><div class="food-grid" id="foodNut"></div></div>
+    <div class="food-cat"><div class="food-cat-title">🫚 香料香草</div><div class="food-grid" id="foodHerbs"></div></div>
+    <div class="food-cat"><div class="food-cat-title">🦐 海鲜类</div><div class="food-grid" id="foodSeafood"></div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">⛔ 限制/避免</div>
+    <div class="food-cat"><div class="food-cat-title">🚫 高GI & 促炎</div><div class="food-grid" id="foodBad"></div></div>
+    <div class="food-cat"><div class="food-cat-title">⚠️ 慎用（灰色地带）</div><div class="food-grid" id="foodCaution"></div></div>
+  </div>
+</div>
+
+<!-- 数据页 -->
+<div class="page" id="page-data">
+  <div class="card">
+    <div class="card-title">📊 账号数据</div>
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-num" id="dFans">0</div><div class="stat-label">粉丝</div></div>
+      <div class="stat-item"><div class="stat-num" id="dViews">0</div><div class="stat-label">总播放</div></div>
+      <div class="stat-item"><div class="stat-num" id="dComplete">0%</div><div class="stat-label">完播率</div></div>
+    </div>
+    <div style="margin-top:8px">
+      <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:2px"><span>本月粉丝目标 1000</span><span id="fanPct">0%</span></div>
+      <div class="progress-bar"><div class="progress-fill" id="fanProgress" style="width:0%"></div></div>
+    </div>
+    <div style="margin-top:8px">
+      <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:2px"><span>本月发布目标 20条</span><span id="postPct">0%</span></div>
+      <div class="progress-bar"><div class="progress-fill" id="postProgress" style="width:0%"></div></div>
+    </div>
+    <div class="data-export-row">
+      <button class="data-export-btn btn-export" onclick="exportData()">📤 导出备份</button>
+      <button class="data-export-btn btn-import" onclick="document.getElementById('importFile').click()">📥 导入恢复</button>
+      <input type="file" id="importFile" accept=".json" onchange="importData(event)">
+      <button class="data-export-btn btn-reset" onclick="resetAllData()">🗑 重置</button>
+    </div>
+  </div>
+</div>
+
+<!-- 底部Tab -->
+<div class="bottom-tab">
+  <div class="tab-item active" onclick="switchTab('home',this)"><span class="icon">🏠</span><span class="label">首页</span></div>
+  <div class="tab-item" onclick="switchTab('calendar',this)"><span class="icon">📅</span><span class="label">日历</span></div>
+  <div class="tab-item" onclick="switchTab('recipe',this)"><span class="icon">🍽️</span><span class="label">食谱</span></div>
+  <div class="tab-item" onclick="switchTab('topics',this)"><span class="icon">💡</span><span class="label">选题</span></div>
+  <div class="tab-item" onclick="switchTab('ai',this)"><span class="icon">🤖</span><span class="label">AI</span></div>
+  <div class="tab-item" onclick="switchTab('knowledge',this)"><span class="icon">🧠</span><span class="label">知识</span></div>
+  <div class="tab-item" onclick="switchTab('foods',this)"><span class="icon">🛒</span><span class="label">食材</span></div>
+  <div class="tab-item" onclick="switchTab('data',this)"><span class="icon">📊</span><span class="label">数据</span></div>
+</div>
+
+<div class="toast" id="toast"></div>
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <h3 id="modalTitle">提示</h3>
+    <p id="modalDesc"></p>
+    <div class="modal-actions" id="modalActions"></div>
+  </div>
+</div>
+
+<script>
+// ============ 状态管理 ============
+const STATE = JSON.parse(localStorage.getItem('pcos_v4') || 'null') || {
+  tasks: [
+    {text:'喝够8杯水', time:'07:00', done:false},
+    {text:'拍一条视频素材', time:'10:00', done:false},
+    {text:'低GI午餐（糙米+三文鱼）', time:'12:00', done:false},
+    {text:'下午茶：无糖酸奶+蓝莓', time:'15:00', done:false},
+    {text:'30分钟运动（快走/瑜伽）', time:'17:00', done:false},
+    {text:'抗炎晚餐+早睡', time:'19:00', done:false},
+    {text:'复盘今日数据', time:'21:00', done:false},
+  ],
+  reminders: [
+    {name:'早起喝水提醒', time:'07:00', on:true},
+    {name:'拍摄提醒', time:'10:00', on:true},
+    {name:'午餐提醒', time:'12:00', on:true},
+    {name:'运动提醒', time:'17:00', on:false},
+    {name:'早睡提醒', time:'22:00', on:true},
+  ],
+  water: 0,
+  periodRecords: [],
+  apiKey: '',
+  fans: 0, views: 0, complete: 0, posts: 0,
+  chatHistory: [],
+};
+let selectedDate = null;
+let currentMonth = new Date().getMonth();
+let currentYear = new Date().getFullYear();
+
+// ============ 食谱库（12套）============
+const RECIPES = [
+  {name:'🍃 抗炎日',meals:[{icon:'🌅',name:'早餐',time:'07:30',foods:['隔夜燕麦杯（燕麦+奇亚籽+蓝莓+核桃）','无糖杏仁奶']},{icon:'☕',name:'加餐',time:'10:00',foods:['水煮蛋1个','小苹果']},{icon:'🌞',name:'午餐',time:'12:00',foods:['糙米饭','清蒸三文鱼','蒜蓉西兰花','紫菜蛋花汤']},{icon:'🍵',name:'加餐',time:'15:00',foods:['无糖希腊酸奶','少量草莓']},{icon:'🌙',name:'晚餐',time:'18:30',foods:['鸡胸肉沙拉','混合生菜+牛油果','坚果碎+橄榄油醋汁']}]},
+  {name:'🫒 地中海风',meals:[{icon:'🌅',name:'早餐',time:'07:30',foods:['全麦吐司+牛油果泥','水煮蛋','黑咖啡']},{icon:'☕',name:'加餐',time:'10:00',foods:['混合坚果']},{icon:'🌞',name:'午餐',time:'12:00',foods:['鹰嘴豆藜麦沙拉','烤三文鱼','橄榄油柠檬汁']},{icon:'🍵',name:'加餐',time:'15:00',foods:['胡萝卜条+鹰嘴豆泥']},{icon:'🌙',name:'晚餐',time:'18:30',foods:['红薯','煎豆腐','蒜蓉菠菜','番茄汤']}]},
+  {name:'🍲 暖胃中式',meals:[{icon:'🌅',name:'早餐',time:'07:30',foods:['小米南瓜粥','水煮蛋','凉拌黄瓜']},{icon:'☕',name:'加餐',time:'10:00',foods:['煮毛豆']},{icon:'🌞',name:'午餐',time:'12:00',foods:['黑米饭','番茄虾仁','凉拌秋葵','豆腐汤']},{icon:'🍵',name:'加餐',time:'15:00',foods:['奇异果','少量核桃']},{icon:'🌙',name:'晚餐',time:'18:30',foods:['全麦馒头','清蒸鲈鱼','蒜蓉菜心']}]},
+  {name:'⚡ 快手日',meals:[{icon:'🌅',name:'早餐',time:'07:30',foods:['Smoothie（菠菜+蓝莓+亚麻籽+豆浆）']},{icon:'☕',name:'加餐',time:'10:00',foods:['水煮蛋+小番茄']},{icon:'🌞',name:'午餐',time:'12:00',foods:['全麦三明治（鸡胸+生菜+番茄）','味噌汤']},{icon:'🍵',name:'加餐',time:'15:00',foods:['无糖酸奶+蓝莓']},{icon:'🌙',name:'晚餐',time:'18:30',foods:['杂粮煎饼','虾仁炒蛋','凉拌海带丝']}]},
+  {name:'🌾 高纤日',meals:[{icon:'🌅',name:'早餐',time:'07:30',foods:['黑豆豆浆','全麦面包+花生酱']},{icon:'☕',name:'加餐',time:'10:00',foods:['苹果+杏仁']},{icon:'🌞',name:'午餐',time:'12:00',foods:['糙米黑米饭','牛肉片炒芦笋','木耳拌芹菜']},{icon:'🍵',name:'加餐',time:'15:00',foods:['煮毛豆+小番茄']},{icon:'🌙',name:'晚餐',time:'18:30',foods:['玉米','豆腐蔬菜炖','杂粮饭团']}]},
+  {name:'✨ 养颜日',meals:[{icon:'🌅',name:'早餐',time:'07:30',foods:['燕麦粥（肉桂粉+核桃+蓝莓）','无糖豆浆']},{icon:'☕',name:'加餐',time:'10:00',foods:['玫瑰红枣茶','少量坚果']},{icon:'🌞',name:'午餐',time:'12:00',foods:['红薯+烤三文鱼','混合沙拉']},{icon:'🍵',name:'加餐',time:'15:00',foods:['石榴籽+奇亚籽布丁']},{icon:'🌙',name:'晚餐',time:'18:30',foods:['山药排骨汤','清炒时蔬','糙米饭']}]},
+  {name:'😋 满足日',meals:[{icon:'🌅',name:'早餐',time:'07:30',foods:['全麦松饼（无糖）+牛油果','水煮蛋']},{icon:'☕',name:'加餐',time:'10:00',foods:['希腊酸奶+蜂蜜+坚果']},{icon:'🌞',name:'午餐',time:'12:00',foods:['糙米炒饭（虾仁+豌豆+胡萝卜）','味噌汤']},{icon:'🍵',name:'加餐',time:'15:00',foods:['85%黑巧2小块','樱桃']},{icon:'🌙',name:'晚餐',time:'18:30',foods:['鸡胸肉咖喱（椰奶基底）','糙米饭','凉拌黄瓜']}]},
+  {name:'🍱 日式轻食',meals:[{icon:'🌅',name:'早餐',time:'07:30',foods:['味噌汤+豆腐海带','水煮蛋','半个红薯']},{icon:'☕',name:'加餐',time:'10:00',foods:['毛豆']},{icon:'🌞',name:'午餐',time:'12:00',foods:['荞麦面（冷面+蘸汁）','烤鲭鱼','凉拌菠菜']},{icon:'🍵',name:'加餐',time:'15:00',foods:['无糖酸奶+抹茶粉']},{icon:'🌙',name:'晚餐',time:'18:30',foods:['茶碗蒸','糙米饭','凉拌海藻']}]},
+  {name:'🔥 暖宫日',meals:[{icon:'🌅',name:'早餐',time:'07:30',foods:['红糖姜枣茶','黑芝麻糊（无糖）','水煮蛋']},{icon:'☕',name:'加餐',time:'10:00',foods:['核桃+桂圆干3颗']},{icon:'🌞',name:'午餐',time:'12:00',foods:['黑米饭','当归炖鸡汤','清炒茼蒿']},{icon:'🍵',name:'加餐',time:'15:00',foods:['玫瑰花茶','少量坚果']},{icon:'🌙',name:'晚餐',time:'18:30',foods:['山药小米粥','清蒸鲈鱼','蒜蓉菠菜']}]},
+  {name:'⏰ 16:8轻断食',meals:[{icon:'🌅',name:'早餐(跳过)',time:'—',foods:['空腹喝水+黑咖啡']},{icon:'☕',name:'加餐',time:'10:00',foods:['温水+柠檬']},{icon:'🌞',name:'午餐(第一餐)',time:'12:00',foods:['大型沙拉碗','烤三文鱼/鸡胸','牛油果+坚果']},{icon:'🍵',name:'加餐',time:'15:30',foods:['骨头汤/防弹咖啡']},{icon:'🌙',name:'晚餐(最后一餐)',time:'19:30',foods:['根茎类蔬菜','优质蛋白','在20:00前吃完']}]},
+  {name:'🌶️ 低辣川味',meals:[{icon:'🌅',name:'早餐',time:'07:30',foods:['豌杂面（全麦面条）','无糖豆浆']},{icon:'☕',name:'加餐',time:'10:00',foods:['煮花生']},{icon:'🌞',name:'午餐',time:'12:00',foods:['糙米饭','水煮肉片（少油）','蒜蓉空心菜']},{icon:'🍵',name:'加餐',time:'15:00',foods:['陈皮山楂水']},{icon:'🌙',name:'晚餐',time:'18:30',foods:['魔芋丝结','酸汤肥牛（少油）','凉拌木耳']}]},
+  {name:'🫐 抗氧化日',meals:[{icon:'🌅',name:'早餐',time:'07:30',foods:['紫薯泥+希腊酸奶+蓝莓+核桃碎']},{icon:'☕',name:'加餐',time:'10:00',foods:['巴西坚果2颗（补硒）']},{icon:'🌞',name:'午餐',time:'12:00',foods:['紫米饭','紫甘蓝沙拉','烤三文鱼']},{icon:'🍵',name:'加餐',time:'15:00',foods:['石榴汁（鲜榨无糖）']},{icon:'🌙',name:'晚餐',time:'18:30',foods:['茄子（蒸）+蒜蓉','豆腐煲','少量糙米']}]},
+];
+
+// ============ 选题库（39条+脚本）============
+const TOPICS = [
+  {cat:'science',catName:'🔥 爆款科普',title:'多囊到底是什么？3分钟讲清胰岛素抵抗',script:'姐妹们，如果你月经3个月才来一次，脸上痘痘不断，体重怎么都减不下来——你可能不是懒，是多囊在搞鬼。多囊全称多囊卵巢综合征，每10个女生就有1个中招。但它的核心不是卵巢上的囊肿，而是胰岛素抵抗。什么意思？你的身体产生了胰岛素，但细胞不听话，血糖降不下来，身体就拼命分泌更多胰岛素，结果刺激卵巢产生更多雄激素。所以多囊的本质是一个代谢问题。改善胰岛素抵抗，才是调理多囊的钥匙。记住三个数字：LH/FSH>2、睾酮偏高、HOMA-IR>2.5，这三个指标一定要查。',diff:'beginner'},
+  {cat:'science',catName:'🔥 爆款科普',title:'多囊必查的5个指标，很多人查错了',script:'去医院查多囊，如果医生只给你做了B超就说"没事"，那你一定要要求加查这5个指标。第一，LH和FSH的比值，正常应该差不多1:1，多囊经常LH是FSH的两倍以上。第二，睾酮，尤其是游离睾酮，这才是真正导致你长痘多毛的元凶。第三，空腹胰岛素和HOMA-IR，直接反映胰岛素抵抗程度。第四，AMH，多囊女生的AMH通常偏高。第五，甲状腺功能，因为甲状腺和多囊经常搭伴出现。把这5个指标打印出来，下次去医院直接递给医生。',diff:'beginner'},
+  {cat:'science',catName:'🔥 爆款科普',title:'降雄激素食物TOP5，吃出女人味',script:'多囊姐妹最困扰的是什么？长痘、多毛、脱发。根源在哪？雄激素太高了。但你知道吗，有些食物天然就能帮助降低雄激素。第一名：亚麻籽。它含有木脂素，能阻断雄激素的合成路径。每天一勺磨碎的亚麻籽加在酸奶里。第二名：薄荷茶。研究发现每天喝薄荷茶，两周就能显著降低游离睾酮。第三名：大豆异黄酮。豆腐豆浆里的植物雌激素可以竞争性结合受体，帮助平衡激素。第四名：姜黄。姜黄素能抑制5α还原酶活性，减少睾酮生成。第五名：西兰花等十字花科蔬菜，帮助肝脏代谢多余激素。',diff:'beginner'},
+  {cat:'science',catName:'🔥 爆款科普',title:'皮质醇：多囊最被忽视的隐形杀手',script:'所有多囊姐妹都在关注胰岛素和雄激素，但有一个激素被严重忽略了，它就是皮质醇——你的压力激素。当你长期压力大，皮质醇居高不下，它会直接对抗胰岛素的作用，让你的血糖更难控制。同时皮质醇还会刺激雄激素分泌，加重多囊症状。所以你会发现，越焦虑越减不下来，恶性循环。怎么破？第一，睡眠！每天7-8小时，11点前入睡。第二，深呼吸，每天10分钟冥想。第三，减少高强度运动，换成瑜伽散步。第四，补充维生素C和镁。',diff:'intermediate'},
+  {cat:'science',catName:'🔥 爆款科普',title:'HOMA-IR：算一算你的胰岛素抵抗指数',script:'今天教大家一个在家就能算的指标——HOMA-IR。公式很简单：空腹血糖乘以空腹胰岛素，再除以22.5。小于1是敏感，1到2.5是临界，大于2.5就是抵抗。举个例子，你空腹血糖5.0，空腹胰岛素15，那5乘15等于75，除以22.5等于3.33，这就已经是明显的胰岛素抵抗了。建议大家在早上空腹、没吃任何东西的情况下抽血查这两个指标，结果最准。算完把自己的数值打在评论区，我帮你看看。',diff:'intermediate'},
+  {cat:'science',catName:'🔥 爆款科普',title:'PCOS vs PCOD，一字之差天壤之别',script:'很多姐妹拿到报告一头雾水：医生一会儿说PCOS，一会儿说PCOD，到底哪个？其实PCOS是多囊卵巢综合征，是诊断名称，需要满足鹿特丹标准。而PCOD只是描述卵巢形态——多囊样改变，不一定有症状。简单说，PCOD是"长得像"，PCOS是"确实是"。但国内很多医生习惯混用，所以你要自己判断：你有没有排卵问题？有没有高雄表现？如果都有，那就是PCOS。如果只是B超显示多囊样改变但月经正常，那可能只是PCOD，不需要过度干预。',diff:'beginner'},
+  {cat:'science',catName:'🔥 爆款科普',title:'维生素D和多囊的关系（90%的人都缺）',script:'多囊姐妹去抽血，十个人里有八个维生素D不足，而这直接影响了你的排卵和胰岛素敏感性。维生素D不是普通的维生素，它在体内更像一种激素，受体遍布全身包括卵巢。研究发现，补充维生素D可以显著改善多囊患者的胰岛素敏感性和排卵率。建议去查一个25羟基维生素D，目标值在50到70之间。如果低于30，就需要认真补了。每天2000到4000国际单位，选D3剂型，随餐吃吸收更好。',diff:'beginner'},
+  {cat:'science',catName:'🔥 爆款科普',title:'多囊→糖尿病的通路，你知道吗？',script:'多囊如果不干预，真的会变成糖尿病吗？答案是：风险确实更高。研究显示，多囊女性在中年时患2型糖尿病的风险是普通女性的4到7倍。通路是这样的：胰岛素抵抗→胰腺超负荷工作→久而久之胰腺功能衰竭→血糖失控→糖尿病。但这不意味着你一定会得。关键是在多囊阶段就把胰岛素抵抗控制好。怎么做？低GI饮食、规律运动增肌、补充肌醇和维生素D、控制体重。把这些做到位，糖尿病的风险可以降到和普通人群一样。',diff:'advanced'},
+  {cat:'science',catName:'🔥 爆款科普',title:'为什么多囊要补镁？被遗忘的关键矿物质',script:'镁参与了人体内300多种酶反应，包括胰岛素信号传导。但现代人普遍缺镁——压力大、吃精制食品、土壤退化，都在偷走你的镁。多囊缺镁的后果是什么？胰岛素信号更差、睡眠质量更差、焦虑更严重。怎么补？食物来源：南瓜籽、黑巧克力、菠菜、杏仁。如果食补不够，可以选甘氨酸镁或柠檬酸镁补充剂，每天200到400毫克。睡前吃还能帮助入睡，一举两得。',diff:'intermediate'},
+  {cat:'science',catName:'🔥 爆款科普',title:'甲状腺+多囊双重暴击怎么吃',script:'很多多囊姐妹去查血，发现甲状腺抗体也高了，TSH偏高。多囊和甲状腺问题经常结伴出现，都和自身免疫、炎症有关。如果你同时有甲减或桥本，饮食上注意几点：第一，碘不能多也不能少，每天150微克左右。第二，十字花科蔬菜要煮熟吃，生吃会干扰碘吸收。第三，补硒！每天两颗巴西坚果就够了。第四，无麸质饮食对部分桥本人有帮助。把这些原则和多囊饮食结合：低GI+抗炎+适量碘+补硒。',diff:'advanced'},
+
+  {cat:'recipe',catName:'🍳 食谱实操',title:'5分钟搞定！多囊友好隔夜燕麦3种吃法',script:'多囊姐妹的早餐黄金法则：低GI、高纤维、优质脂肪。隔夜燕麦完美满足。做法：晚上睡前，取半杯rolled oats，加一勺奇亚籽，倒入无糖杏仁奶或豆浆，没过燕麦两厘米。放进冰箱。第二天早上拿出来，加你喜欢的水果和坚果。今天教3种搭配：第一种，蓝莓+核桃+肉桂粉，抗氧化之王。第二种，可可粉+香蕉+杏仁片，满足巧克力cravings。第三种，抹茶粉+白芝麻+草莓。记住一定要用rolled oats不是即食燕麦，GI值更低。',diff:'beginner'},
+  {cat:'recipe',catName:'🍳 食谱实操',title:'一锅烤系列：三文鱼+红薯+芦笋',script:'懒人福音！一个烤盘搞定一顿抗炎大餐。只需要一个烤盘、三种食材、十分钟准备。食材：三文鱼排一块、红薯一个切条、芦笋一把。调味：橄榄油两勺、蒜末、盐、黑胡椒、柠檬汁。烤箱预热200度。红薯条先烤15分钟，然后放上三文鱼和芦笋，再烤12分钟。为什么推荐这个组合？三文鱼富含Omega-3，直接对抗多囊的慢性炎症。红薯是低GI碳水。芦笋富含叶酸和纤维。一餐下来碳水蛋白好脂肪纤维全齐了。',diff:'beginner'},
+  {cat:'recipe',catName:'🍳 食谱实操',title:'多囊下午茶：不升糖的甜蜜满足',script:'下午3点是不是特别想吃甜食？这不是你意志力差，是血糖在求救。但如果你这时候去吃饼干蛋糕，血糖会像过山车一样飙升又暴跌。多囊下午茶的正确打开方式：蛋白质+纤维+好脂肪。推荐三个：第一，无糖希腊酸奶+少量蓝莓+核桃碎。第二，煮鸡蛋+小番茄+黄瓜条。第三，奇亚籽布丁——奇亚籽泡无糖椰奶一晚上，加一点草莓。满足感强、升糖慢、还能帮助激素平衡。',diff:'beginner'},
+  {cat:'recipe',catName:'🍳 食谱实操',title:'外食攻略：火锅/日料/西餐怎么点',script:'多囊就不能外食？收藏这份点单攻略。火锅篇：汤底选清汤或番茄，蘸料用醋+蒜+少量酱油。先吃绿叶菜，再吃蛋白质，最后吃少量红薯当碳水。日料篇：优先刺身和烤鱼，寿司少吃，拉面换成乌冬。西餐篇：选烤鸡或煎三文鱼配蔬菜沙拉，酱汁放旁边蘸着吃不要浇上去。快餐应急：麦当劳烤鸡堡去酱+玉米杯。',diff:'beginner'},
+  {cat:'recipe',catName:'🍳 食谱实操',title:'Smoothie Bowl：颜值与营养双在线',script:'Smoothie Bowl是我每天的早餐之一，不仅好看能拍视频，营养密度也极高。基础公式：一份液体+一把蔬菜+少量低GI水果+一勺超级食物。第一款：无糖豆浆+一把菠菜+5颗草莓+一勺亚麻籽粉。第二款：无糖椰奶+少量蓝莓+半根香蕉+胶原蛋白粉。第三款：杏仁奶+羽衣甘蓝+几颗樱桃+奇亚籽。重点提醒：不要加太多水果！蔬菜是主角，水果只是调味。',diff:'beginner'},
+  {cat:'recipe',catName:'🍳 食谱实操',title:'经期暖身汤：五红汤升级版',script:'经期喝什么？今天教你五红汤的升级版，专门为多囊姐妹设计。传统五红汤是红豆、红枣、红皮花生、枸杞、红糖。但红糖升糖太快，我们把它换成桂圆和一小撮藏红花。做法：红豆提前泡一夜，加水煮到软烂，加入红枣、红皮花生、桂圆，再煮15分钟，最后撒枸杞焖5分钟。藏红花只需要5到8根，活血化瘀效果比红糖好，而且几乎不升糖。经期前三天开始喝，暖宫又补血。',diff:'beginner'},
+  {cat:'recipe',catName:'🍳 食谱实操',title:'抗炎黄金奶：睡前一杯安神抗炎',script:'今天教大家一款多囊友好的睡前饮品——黄金奶。材料：一杯无糖椰奶或杏仁奶，四分之一勺姜黄粉，一小撮黑胡椒，半勺肉桂粉，几滴香草精。做法：小火加热奶，加入所有香料，搅拌均匀但不要煮沸，温热就好。黑胡椒里的胡椒碱能让姜黄的吸收率提高2000%。肉桂帮助稳定夜间血糖。睡前一小时喝，安神、抗炎、还不怕胖。',diff:'beginner'},
+  {cat:'recipe',catName:'🍳 食谱实操',title:'便利店多囊急救包：出差也能吃对',script:'出差住酒店没有厨房怎么办？今天教你用便利店食材拼出一整天多囊友好饮食。早餐：全麦面包+茶叶蛋+无糖豆浆。午餐：711的鸡胸肉沙拉+玉米+无糖酸奶。下午茶：每日坚果一小包+小番茄。晚餐：关东煮的萝卜、海带、鸡蛋、豆腐，不要汤底选清水。饮料：矿泉水+泡腾片或直接喝茶。便利店不是不能去，关键是知道怎么选。',diff:'beginner'},
+
+  {cat:'life',catName:'🌿 生活方式',title:'多囊运动处方：不是所有运动都适合',script:'很多多囊姐妹拼命跑步跳操，结果月经更乱了体重也不掉。问题出在哪？高强度有氧运动会让皮质醇飙升，而高皮质醇会加重胰岛素抵抗。多囊最适合的运动组合是：力量训练为主、HIIT为辅、瑜伽拉伸收尾。具体安排：周一三五做30分钟力量训练，深蹲硬拉臀桥这些复合动作最有效。周二四做15分钟HIIT。周六日做瑜伽或散步。每次运动安排在餐后30分钟到1小时，这时候血糖最高，运动降糖效果最好。',diff:'intermediate'},
+  {cat:'life',catName:'🌿 生活方式',title:'多囊补剂红黑榜：哪些值得吃？',script:'多囊补剂我吃过不下20种，今天给你一份红黑榜。红榜第一名：肌醇。尤其是Myo和DCI按40:1配比的，直接改善胰岛素信号传导。建议每天2000到4000毫克。第二名：维生素D。多囊普遍缺乏，去查个25羟基D，低于30就要补。第三名：镁。甘氨酸镁或柠檬酸镁，改善胰岛素敏感性和睡眠。第四名：Omega-3鱼油，抗炎首选。黑榜：各种来路不明的多囊特效药、含激素的保健品。补剂是辅助，饮食和生活方式才是根本。',diff:'intermediate'},
+  {cat:'life',catName:'🌿 生活方式',title:'睡眠修复：熬夜=慢性自杀（多囊版）',script:'如果你只改善多囊的一个习惯，那就改善睡眠。为什么？睡眠不足会直接升高皮质醇，皮质醇升高会升高血糖，血糖升高刺激胰岛素，胰岛素升高刺激雄激素。研究发现连续一周睡不够6小时，胰岛素敏感性下降30%。怎么睡好？第一，固定时间上床，11点前。第二，睡前2小时不碰手机。第三，卧室温度20到22度。第四，晚餐吃点小米粥、樱桃、核桃，富含色氨酸和褪黑素前体。',diff:'beginner'},
+  {cat:'life',catName:'🌿 生活方式',title:'肠脑轴：肠道菌群如何影响你的激素',script:'你可能不知道，你的肠道细菌在操控你的激素水平。肠道菌群通过肠肝循环影响雌激素的再吸收。菌群失调的女性，雌激素水平往往异常。而且肠道菌群失衡会导致肠漏，引发全身慢性炎症，直接加重胰岛素抵抗。怎么养好肠道菌群？第一，每天吃够25克以上膳食纤维。第二，发酵食品：酸奶、泡菜、康普茶。第三，少吃精制糖和人工甜味剂。第四，必要时补充益生菌，选有多菌株的。',diff:'advanced'},
+  {cat:'life',catName:'🌿 生活方式',title:'多囊护肤成分红黑榜',script:'多囊姐妹因为雄激素高，皮肤容易出油长痘。护肤品怎么选？红榜成分：水杨酸，疏通毛孔。烟酰胺，控油+修复屏障。壬二酸，专门针对痘印和玫瑰痤疮。视黄醇，促进角质代谢。黑榜成分：矿物油，容易闷痘。椰子油，致痘风险高。含激素的面霜，短期有效长期毁脸。另外内服方面，肌醇+锌+维生素A对改善多囊皮肤有帮助，但维生素A不要过量。',diff:'intermediate'},
+  {cat:'life',catName:'🌿 生活方式',title:'为什么多囊不建议低脂饮食？',script:'很多姐妹觉得胖了就该吃低脂，但对多囊来说恰恰相反。胆固醇是性激素合成的原料。极低脂饮食会导致性激素合成不足，月经更加紊乱。而且脂肪能延缓胃排空，让餐后血糖上升更平缓。多囊应该吃的是好脂肪：单不饱和脂肪酸（橄榄油、牛油果、坚果）和Omega-3（三文鱼、亚麻籽、核桃）。每天脂肪占总热量的30%到35%是比较合适的。不要怕脂肪，怕的是反式脂肪和精炼种子油。',diff:'intermediate'},
+  {cat:'life',catName:'🌿 生活方式',title:'血糖负荷(GL)比GI更重要的原因',script:'大家都听过升糖指数GI，但真正该关注的是血糖负荷GL。GL = GI乘以食物中碳水化合物的含量再除以100。什么意思？西瓜GI很高，有76，但一块西瓜的碳水化合物只有6克左右，GL只有4.5，属于低负荷。而一碗白米饭GI只有83，但碳水有45克，GL高达37。所以控制每餐碳水总量比纠结某种食物的GI更重要。这也是为什么多囊可以吃水果但不能吃太多，可以吃红薯但不能当饭吃。',diff:'intermediate'},
+
+  {cat:'story',catName:'💕 故事共鸣',title:'确诊多囊3年，我踩过的10个饮食坑',script:'确诊多囊那年我才23岁，月经半年不来，满脸痘痘，体重飙升20斤。这3年我走过的弯路今天全部告诉你。第一个坑：听说碳水不好直接戒了，结果姨妈彻底离家出走。第二个坑：只吃水煮菜不吃油，结果脂溶性维生素全部缺乏。第三个坑：花3000块买所谓多囊特效粉，其实就是蛋白粉加维生素。第四个坑：每天只吃800卡，基础代谢垮了。第五个坑：一天喝8杯芹菜汁，结果甲状腺出了问题。真正让我好转的，是回归基础：适量优质碳水、好好吃脂肪、规律三餐、不折腾。',diff:'beginner'},
+  {cat:'story',catName:'💕 故事共鸣',title:'多囊智商税大揭秘',script:'作为一个在多囊上花了至少5万块的过来人，今天帮你排雷。第一，蜂王浆。很多卖家说能调激素，实际上它含有微量雌激素类似物，多囊本身雄激素高，乱补雌激素只会让激素更紊乱。第二，各种多囊专属调理茶，成分表一看就是菊花加玫瑰花加枸杞，超市20块能买一包的那种，它卖你199。第三，天价有机低GI食品，GI值低不低看的是加工方式不是有没有机。第四，酵素和排毒果汁，就是糖水加了一点发酵物。真正值得花钱的：一份靠谱的激素检测、一盒好的肌醇、一块优质的牛排。',diff:'beginner'},
+  {cat:'story',catName:'💕 故事共鸣',title:'多囊备孕：从绝望到好孕',script:'这条视频可能会帮到正在备孕的多囊姐妹。确诊多囊后医生说我不排卵，建议直接促排。但我当时才26岁，不想马上走医疗路线，决定先自己调理6个月。第1个月：戒掉所有零食和奶茶，开始吃低GI饮食。第2个月：加了力量训练，体重开始下降。第3个月：月经从3个月一次变成6周一次。第4个月：开始吃肌醇每天4000毫克，维生素D2000单位。第5个月：月经35天准时来了。第6个月，我测到了两条杠。我不是说每个人都能这样，但多囊不代表不能自然怀孕，先给身体一个机会。',diff:'intermediate'},
+  {cat:'story',catName:'💕 故事共鸣',title:'被误诊3次的多囊经历',script:'从第一次月经紊乱到最终确诊多囊，我花了整整4年。第一次去看医生，她说我太年轻了，月经不规律很正常。第二次换了医院，B超显示多囊样改变，但医生看了我的激素六项说没问题，让我回去观察。第三次去三甲医院内分泌科，医生终于给我做了全面检查，包括空腹胰岛素和HOMA-IR，才发现我的胰岛素抵抗已经很严重了。所以姐妹们，如果你的直觉告诉你哪里不对，就多跑几家医院，找一个愿意听你说话的医生。',diff:'beginner'},
+  {cat:'story',catName:'💕 故事共鸣',title:'停药后维持5年的秘密',script:'5年前我靠二甲双胍和避孕药把月经调回来了，但一停药就打回原形。后来我做了一个决定：慢慢停药，用生活方式来管理。过程并不容易。前三个月是最难的，身体在适应没有药物的日子。但我坚持了低GI饮食、每周三次力量训练、每天2000毫克肌醇、每天晒太阳补维生素D。慢慢地，月经开始自己来了。到现在5年了，没有再依赖任何药物。我不是说药物没用，而是想告诉大家，药物帮你度过最难的阶段，但最终你要把主动权拿回来。',diff:'advanced'},
+  {cat:'story',catName:'💕 故事共鸣',title:'多囊身材焦虑，我和解了',script:'这条视频可能跟饮食无关，但我觉得有必要说。多囊姐妹的身材焦虑，可能是普通人的十倍。因为胰岛素抵抗，我们的脂肪更容易堆积在腹部。因为雄激素高，我们更容易长肌肉看起来壮。我曾经为了追求瘦，把自己饿到闭经。后来我才明白，健康的身体不是瘦出来的，是养出来的。现在我不再每天称体重，而是关注腰围有没有变小、精力有没有变好、月经有没有按时来。多囊不是你的错，你的身体值得被温柔对待。',diff:'beginner'},
+
+  {cat:'myth',catName:'🚫 辟谣专区',title:'多囊不能吃水果？水果红黑榜来了',script:'多囊不能吃水果是我听过最大的误区之一。这个说法的来源是水果含果糖，但问题是，你吃一个苹果摄入的果糖和喝一杯奶茶完全不是一个量级。判断水果能不能吃，要看GL也就是血糖负荷而不是简单的GI。低GL水果放心吃：第一名蓝莓，抗氧化+低糖。第二名草莓，维C炸弹。第三名樱桃，有助于降尿酸。第四名苹果，果胶丰富。第五名猕猴桃，维C之王。黑榜要少碰：西瓜、荔枝、榴莲。每天一份水果，大约一个拳头大小，放心吃。',diff:'beginner'},
+  {cat:'myth',catName:'🚫 辟谣专区',title:'豆浆喝多了会得多囊？真相来了',script:'豆浆含雌激素，喝多了会得多囊——这个说法我被妈妈念叨了100遍。今天一次性说清楚。大豆里的异黄酮叫植物雌激素，它的结构和人体雌激素像，但活性只有人体雌激素的千分之一到万分之一。更重要的是，它是双向调节的：当你体内雌激素低的时候它补一点，高的时候它反而占着受体不让真正的雌激素进去。对多囊有什么好处？研究发现大豆异黄酮可以改善胰岛素敏感性，降低睾酮水平。每天一杯无糖豆浆完全没问题。',diff:'beginner'},
+  {cat:'myth',catName:'🚫 辟谣专区',title:'无糖食品真的无糖吗？配料表解读',script:'超市货架上标着无糖的食品，多囊姐妹是不是觉得可以放心吃了？大错特错。首先无糖只是说蔗糖含量低于0.5克每100克，但里面可能加了麦芽糊精，升糖速度比白糖还快。还可能加了果葡糖浆、葡萄糖浆。怎么看配料表？记住三个原则：第一，配料表前三位如果出现糖浆、糊精、淀粉就要警惕。第二，碳水化合物总量比是否含糖更重要。第三，代糖选赤藓糖醇、甜菊糖苷，避开阿斯巴甜和三氯蔗糖。拿起你家里的无糖饼干翻到背面看看。',diff:'intermediate'},
+  {cat:'myth',catName:'🚫 辟谣专区',title:'多囊必须吃二甲双胍？别急着吃药',script:'确诊多囊后，很多医生第一件事就是开二甲双胍。但你要不要马上吃？先搞清楚这个药是干嘛的。二甲双胍减少肝脏产糖、增加肌肉对胰岛素的敏感性。如果你有明显的胰岛素抵抗且通过3到6个月饮食运动干预效果不好，可以考虑服用。但如果你只是月经不太规律，胰岛素正常，那先别急着吃药，从生活方式入手往往就够了。如果决定吃，记住：随餐吃减少胃肠反应、从低剂量开始、定期查B12。药是辅助不是免死金牌。',diff:'intermediate'},
+  {cat:'myth',catName:'🚫 辟谣专区',title:'酵素/宿便/排毒，全是智商税',script:'多囊姐妹是不是经常被便秘困扰，然后被推销各种酵素、排毒丸？今天拆穿这个骗局。首先，医学上根本没有宿便这个概念，你的结肠里有的只是正常的大便。其次，酵素的本质是酶，口服后会在胃里被胃酸分解，根本到不了肠道发挥作用。那些吃了酵素拉肚子的，是因为里面加了泻药成分，比如番泻叶、芦荟大黄素。长期用会导致结肠黑变病。真正改善便秘的方法：多喝水、多吃纤维、适量运动、补充镁和益生菌。',diff:'beginner'},
+  {cat:'myth',catName:'🚫 辟谣专区',title:'生酮饮食适合多囊吗？',script:'生酮饮食在网上被吹得很神，说能治好多囊。真相是什么？生酮确实能在短期内改善胰岛素敏感性和减重，因为它几乎切断了碳水来源。但问题是，长期坚持生酮对多囊女性有风险：第一，极低碳水会进一步扰乱下丘脑-垂体-卵巢轴，有些人月经反而没了。第二，脂肪摄入过高可能增加氧化应激。第三，很难长期坚持，一旦恢复正常饮食很容易反弹。如果你想尝试，建议在医生指导下短期使用，不要自己瞎搞超过3个月。',diff:'advanced'},
+  {cat:'myth',catName:'🚫 辟谣专区',title:'胶原蛋白饮品对多囊有用吗？',script:'市面上的胶原蛋白饮动辄几百上千一瓶，广告说能美容养颜。对多囊有用吗？坦白说，作用非常有限。胶原蛋白是一种不完全蛋白质，进入人体后会被分解成氨基酸重新组合，不一定会变成皮肤的胶原蛋白。而且很多胶原蛋白饮添加了大量糖分和香精，对多囊反而不友好。如果想补充胶原蛋白，不如多吃富含优质蛋白的食物：鱼皮、猪蹄、鸡爪，同时搭配维生素C帮助合成。或者直接吃水解胶原蛋白肽粉，选无糖的，性价比高很多。',diff:'intermediate'},
+  {cat:'myth',catName:'🚫 辟谣专区',title:'多囊可以喝酒吗？',script:'多囊能不能喝酒？答案很明确：尽量少喝。酒精对多囊有三个负面影响：第一，酒精在肝脏代谢时会占用解毒通道，影响雌激素的代谢和排出。第二，酒精会升高皮质醇，加重胰岛素抵抗。第三，酒精饮料通常含有大量空热量和添加糖。如果实在要喝，红酒相对好一些，因为含有白藜芦醇有轻微抗炎作用，但也要控制在每天一小杯以内。啤酒和鸡尾酒尽量别碰，升糖快还胀气。',diff:'beginner'},
+
+  {cat:'series',catName:'📖 系列专栏',title:'21天多囊饮食挑战：Day1 清冰箱',script:'欢迎来到21天多囊饮食挑战！为什么是21天？因为行为心理学研究表明21天是养成一个新习惯的最小周期。Day1的任务非常简单：清理你的冰箱和橱柜。把这几样东西找出来直接扔掉：含糖饮料、饼干蛋糕、白面包、薯片、奶茶粉。然后在采购清单上写下替代品：无糖杏仁奶、全麦面包、坚果、希腊酸奶、新鲜蔬果。不需要一步到位，今天只做这一件事。评论区打卡：拍下你清理前后的冰箱对比！',diff:'beginner'},
+  {cat:'series',catName:'📖 系列专栏',title:'食材百科：超级食物深扒——姜黄',script:'今天开始一个新的系列：食材百科。第一期：姜黄。你可能只知道它是咖喱里的黄色粉末，但姜黄里的姜黄素是已知最强的天然抗炎物质之一。多囊的本质是慢性炎症加胰岛素抵抗，姜黄素刚好两头都管。它能抑制NF-κB炎症通路，降低CRP炎症指标；还能激活AMPK通路，改善胰岛素信号。怎么吃？印度人喜欢做成黄金奶：一杯热椰奶加四分之一勺姜黄粉加黑胡椒。黑胡椒里的胡椒碱能让姜黄素吸收率提高2000%。',diff:'intermediate'},
+  {cat:'series',catName:'📖 系列专栏',title:'超市攻略：购物车大公开',script:'这个系列叫超市攻略，我会带你去不同的超市，手把手教你怎么选。今天先讲路线。进超市第一站不要去主食区，先去生鲜蔬菜区，因为那里最健康。蔬菜区：西兰花、菠菜、芦笋、秋葵。然后去肉类海鲜区：三文鱼、虾、鸡胸肉、牛肉。冷冻区可以买冷冻蓝莓和冷冻虾仁，性价比高。最后去主食区：找全麦面包、糙米、燕麦。零食区直接路过不要停留。购物车里70%应该是生鲜食材，只有30%是包装食品。',diff:'beginner'},
+  {cat:'series',catName:'📖 系列专栏',title:'Q&A系列：粉丝最常问的10个问题',script:'收集了评论区被问最多的10个问题，今天统一回答。第一问：多囊能喝牛奶吗？大部分人可以，但如果你有乳糖不耐受或者喝牛奶后痘痘加重，就换成无糖豆浆或杏仁奶。第二问：肌醇什么时候吃？随餐或餐后吃吸收最好。第三问：多囊能喝咖啡吗？适量可以，每天一到两杯黑咖啡，但不要加糖和奶精。第四问：运动多久见效？一般坚持4到6周能看到月经改善。第五问：需要终身管理吗？是的，多囊是慢性病，但管理好了和正常人没区别。剩下的5个问题在评论区置顶。',diff:'beginner'},
+  {cat:'series',catName:'📖 系列专栏',title:'多囊一日Vlog：我的周末抗炎日常',script:'今天带你们沉浸式体验我一个多囊周末的一天。早上7点半起床，先喝一大杯温水加柠檬。8点做15分钟晨间瑜伽唤醒身体。8点半早餐：隔夜燕麦杯加蓝莓核桃。10点出门去超市采购一周的食材。12点午餐：昨天买的食材做了糙米三文鱼沙拉。下午2点到4点处理工作。4点去健身房做力量训练，今天练腿。6点晚餐：山药排骨汤加清炒时蔬。8点泡个热水澡，10点半准时睡觉。这就是我周末的节奏，不需要多精致，但每一步都在为身体加分。',diff:'beginner'},
+  {cat:'series',catName:'📖 系列专栏',title:'多囊外卖红黑榜：10大平台实测',script:'多囊点外卖怎么选？今天实测10大外卖平台的选项。美团饿了么通用攻略：搜索关键词换成"轻食""健身餐""沙拉"。红榜：Wagas的煎三文鱼沙拉、超级碗的糙米鸡胸肉碗、沙野轻食的任意低卡餐。黑榜：黄焖鸡米饭（汤汁全是油）、麻辣烫（麻酱底料升糖炸弹）、兰州拉面（面条精制碳水+汤里味精）。如果只能吃普通外卖，记住三个原则：米饭吃一半倒一半、菜过一遍清水去油、不喝汤和饮料。',diff:'beginner'},
+];
+
+// ============ 知识卡片 ============
+const KNOWLEDGE = [
+  {title:'什么是胰岛素抵抗？',content:'细胞对胰岛素反应迟钝，胰腺代偿分泌更多胰岛素，刺激卵巢产生过多雄激素。',diff:'beginner'},
+  {title:'HOMA-IR怎么算？',content:'空腹血糖×空腹胰岛素÷22.5。＜1.0敏感，1.0-2.5临界，＞2.5抵抗。',diff:'intermediate'},
+  {title:'为什么多囊要补维生素D？',content:'VD缺乏加重胰岛素抵抗和排卵障碍。目标50-70ng/mL。',diff:'beginner'},
+  {title:'肌醇是什么？',content:'Myo:DCI按40:1配比最接近人体卵泡液比例，每天2000-4000mg。',diff:'intermediate'},
+  {title:'慢性炎症和多囊的关系',content:'低度慢性炎症贯穿多囊全程。CRP、IL-6、TNF-α等炎症因子干扰胰岛素信号。Omega-3、姜黄、花青素是天然抗炎剂。',diff:'advanced'},
+  {title:'皮质醇-胰岛素恶性循环',content:'压力→皮质醇↑→血糖↑→胰岛素↑→脂肪囤积→炎症↑→胰岛素抵抗加重→皮质醇进一步↑。打破循环关键是睡眠+放松。',diff:'intermediate'},
+  {title:'甲状腺与多囊的关联',content:'约30%多囊合并桥本甲状腺炎。两者共享遗传易感性和自身免疫背景。TSH应控制在2.5以下（备孕标准）。',diff:'advanced'},
+  {title:'肠道菌群与雌激素代谢',content:'肠道菌群通过肠肝循环影响雌激素再吸收。菌群失调可能导致雌激素水平异常。多吃膳食纤维+发酵食品可改善。',diff:'advanced'},
+  {title:'多囊饮食三大原则',content:'①低GI平稳血糖 ②抗炎（Omega-3） ③足量蛋白+纤维',diff:'beginner'},
+  {title:'运动怎么选？',content:'力量训练＞HIIT＞有氧。力量训练增加肌肉量→提高基础代谢和胰岛素敏感性。每周3次力量+2次HIIT+每日步行8000步。',diff:'beginner'},
+  {title:'为什么多囊容易焦虑抑郁？',content:'激素波动影响神经递质（血清素、多巴胺），加上外貌改变带来的心理压力。建议筛查PHQ-9和GAD-7量表。',diff:'intermediate'},
+  {title:'亚麻籽的正确吃法',content:'必须磨碎后食用（整粒不消化）。每天1-2汤匙，含木脂素（降雄）和ALA（Omega-3前体）。现磨现吃避免氧化。',diff:'beginner'},
+  {title:'肉桂的降糖机制',content:'肉桂中的多酚可提高胰岛素受体敏感性，模拟胰岛素作用。建议每天1/4~1茶匙锡兰肉桂粉。',diff:'intermediate'},
+  {title:'多囊卵巢≠多囊卵巢综合征',content:'超声下卵巢呈多囊样改变（PCO）≠确诊PCOS。需满足鹿特丹标准中的2/3：稀发排卵+高雄表现+多囊样卵巢。',diff:'beginner'},
+  {title:'月经周期各阶段的饮食重点',content:'卵泡期：高蛋白+铁（修复内膜）。排卵期：抗氧化+锌。黄体期：镁+B6（缓解经前综合征）。月经期：温补+铁+抗炎。',diff:'intermediate'},
+  {title:'大豆异黄酮的双向调节',content:'结构与雌二醇相似但活性仅1/1000-1/10000。体内雌激素低时弱补充，高时竞争占位。多囊可放心适量摄入。',diff:'advanced'},
+  {title:'为什么多囊不建议低脂饮食？',content:'胆固醇是性激素合成原料。极低脂饮食→性激素合成不足→月经紊乱。应摄入足量单不饱和脂肪。',diff:'intermediate'},
+  {title:'血糖负荷(GL)比GI更重要',content:'GL = GI×碳水含量/100。控制每餐碳水总量比纠结GI更重要。',diff:'intermediate'},
+  {title:'镁：被遗忘的多囊矿物质',content:'参与300+酶反应，包括胰岛素信号传导。甘氨酸镁吸收好且不腹泻。目标每日400mg。',diff:'advanced'},
+  {title:'如何判断自己是否排卵？',content:'基础体温双相变化、宫颈黏液拉丝状、排卵试纸阳性、经阴道超声监测。多囊姐妹可配合B超+孕酮确认。',diff:'beginner'},
+];
+
+const COMPLIANCE = [
+  {wrong:'"治疗/治愈多囊"',right:'"调理/改善多囊症状"'},
+  {wrong:'"降血糖"',right:'"帮助稳定餐后血糖"'},
+  {wrong:'"减肥"',right:'"健康体态管理"'},
+  {wrong:'"疗效"',right:'"我的亲身经验分享"'},
+  {wrong:'"100%有效"',right:'"对我个人有效，因人而异"'},
+  {wrong:'推荐药物剂量',right:'"只说食物来源，用药请遵医嘱"'},
+  {wrong:'冒充医生',right:'"多囊过来人/饮食爱好者"'},
+  {wrong:'"替代医嘱"',right:'"本内容仅供分享，不作为医疗建议"'},
+];
+
+const FOODS = {
+  staple:[{e:'🍚',n:'糙米'},{e:'🌾',n:'燕麦'},{e:'✨',n:'藜麦'},{e:'🍠',n:'红薯'},{e:'⚫',n:'黑米'},{e:'🫘',n:'荞麦'},{e:'🌽',n:'玉米'},{e:'🫚',n:'小米'},{e:'🍘',n:'全麦饼'},{e:'🥔',n:'紫薯'}],
+  protein:[{e:'🐟',n:'三文鱼'},{e:'🍗',n:'鸡胸肉'},{e:'🥚',n:'鸡蛋'},{e:'🥣',n:'豆腐'},{e:'🍤',n:'虾仁'},{e:'🐠',n:'鲈鱼'},{e:'🥩',n:'瘦牛肉'},{e:'🫘',n:'鹰嘴豆'},{e:'🥛',n:'希腊酸奶'},{e:'🧀',n:'茅屋芝士'}],
+  veg:[{e:'🥦',n:'西兰花'},{e:'🍃',n:'菠菜'},{e:'🥬',n:'羽衣甘蓝'},{e:'🌿',n:'芦笋'},{e:'🫛',n:'秋葵'},{e:'🥒',n:'黄瓜'},{e:'🍅',n:'番茄'},{e:'🧅',n:'大蒜'},{e:'🥕',n:'胡萝卜'},{e:'🫑',n:'彩椒'}],
+  fruit:[{e:'🫐',n:'蓝莓'},{e:'🍓',n:'草莓'},{e:'🍎',n:'苹果'},{e:'🍒',n:'樱桃'},{e:'🥝',n:'猕猴桃'},{e:'🍑',n:'石榴'},{e:'🍊',n:'橙子'},{e:'🍇',n:'葡萄'}],
+  nut:[{e:'🌰',n:'核桃'},{e:'🌰',n:'杏仁'},{e:'🌱',n:'奇亚籽'},{e:'🌻',n:'亚麻籽'},{e:'🫒',n:'橄榄油'},{e:'🥑',n:'牛油果'},{e:'🥜',n:'花生'},{e:'🌻',n:'葵花籽'}],
+  herbs:[{e:'🫚',n:'生姜'},{e:'✨',n:'肉桂'},{e:'🟡',n:'姜黄'},{e:'🌿',n:'迷迭香'},{e:'🌿',n:'罗勒'},{e:'🧄',n:'大蒜'}],
+  seafood:[{e:'🦐',n:'虾'},{e:'🐚',n:'蛤蜊'},{e:'🦑',n:'鱿鱼'},{e:'🐙',n:'章鱼'},{e:'🦀',n:'蟹'},{e:'🐟',n:'沙丁鱼'}],
+  bad:[{e:'🍞',n:'白面包'},{e:'🍰',n:'蛋糕甜点'},{e:'🥤',n:'含糖饮料'},{e:'🍟',n:'薯片炸物'},{e:'🥓',n:'加工肉类'},{e:'🍜',n:'方便面'},{e:'🍦',n:'冰淇淋'},{e:'🍯',n:'果葡糖浆'}],
+  caution:[{e:'🥛',n:'全脂牛奶'},{e:'🍚',n:'白米饭'},{e:'🍺',n:'酒精'},{e:'☕',n:'过量咖啡因'},{e:'🍌',n:'高糖水果'}],
+};
+
+// ============ 工具函数 ============
+function save() { localStorage.setItem('pcos_v4', JSON.stringify(STATE)); }
+function toast(msg) { const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2000); }
+function formatDate(y,m,d) { return `${y}-${String(m).padStart(2,'0')}-${String(d).padStart(2,'0')}`; }
+
+function switchTab(name, el) {
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-item').forEach(t=>t.classList.remove('active'));
+  document.getElementById('page-'+name).classList.add('active');
+  if(el) el.classList.add('active'); else event.target.closest('.tab-item').classList.add('active');
+  if(name==='calendar') { renderCalendar(); renderAnalysis(); }
+  if(name==='recipe') loadRecipe();
+  if(name==='topics') renderTopics('all');
+  if(name==='knowledge') renderKnowledge();
+  if(name==='foods') renderFoods();
+  if(name==='data') renderData();
+  if(name==='ai') renderAI();
+}
+
+function refreshAll() {
+  STATE.tasks.forEach(t=>t.done=false); STATE.water=0; save();
+  renderHome(); renderWater(); renderTasks(); toast('已全部刷新 ✅');
+}
+
+// ============ 首页 ============
+function renderHome() {
+  const done = STATE.tasks.filter(t=>t.done).length;
+  document.getElementById('homeComplete').textContent = Math.round(done/STATE.tasks.length*100)+'%';
+  document.getElementById('homeFans').textContent = STATE.fans;
+  // 距经期
+  const next = getNextPeriodDate();
+  if(next) {
+    const nd=new Date(next); const today=new Date(); today.setHours(0,0,0,0); nd.setHours(0,0,0,0);
+    const diff=Math.round((nd-today)/86400000);
+    document.getElementById('homePeriod').textContent = diff>0?diff:'0';
+  } else { document.getElementById('homePeriod').textContent='--'; }
+  renderTasks();
+  renderWater();
+  renderReminders();
+  // 首页食谱预览
+  const r = RECIPES[0];
+  document.getElementById('homeRecipe').innerHTML = r.meals.map(m=>`<div style="margin-bottom:6px"><b style="font-size:13px;color:var(--pomegranate-700)">${m.icon} ${m.name}</b> <span style="font-size:11px;color:#999">${m.time}</span><br><span style="font-size:12px;color:#666">${m.foods.join('、')}</span></div>`).join('');
+}
+function toggleTask(i) { STATE.tasks[i].done=!STATE.tasks[i].done; save(); renderHome(); }
+function addTask() {
+  const text=document.getElementById('newTaskText').value.trim();
+  const time=document.getElementById('newTaskTime').value;
+  if(!text){toast('请输入任务内容');return;}
+  STATE.tasks.push({text,time,done:false}); save(); renderHome();
+  document.getElementById('newTaskText').value=''; toast('已添加 ✅');
+}
+function delTask(i) { STATE.tasks.splice(i,1); save(); renderHome(); }
+function toggleReminder(i) { STATE.reminders[i].on=!STATE.reminders[i].on; save(); renderHome(); }
+
+// ============ 喝水 ============
+function renderWater() {
+  document.getElementById('waterTracker').innerHTML = Array.from({length:8},(_,i)=>`<div class="water-cup ${i<STATE.water?'filled':''}" onclick="setWater(${i+1})">💧</div>`).join('');
+  document.getElementById('waterText').textContent=`${STATE.water}/8杯`;
+}
+function setWater(n) { STATE.water=n; save(); renderWater(); }
+
+// ============ 任务列表 ============
+function renderTasks() {
+  document.getElementById('taskList').innerHTML = STATE.tasks.map((t,i)=>`<div class="task-item"><div class="task-check ${t.done?'done':''}" onclick="toggleTask(${i})">${t.done?'✓':''}</div><div onclick="editTask(${i})" style="flex:1"><div class="task-text ${t.done?'done':''}">${t.text}</div><div class="task-time">${t.time}</div></div><button class="task-del" onclick="delTask(${i})">🗑</button></div>`).join('');
+  const done=STATE.tasks.filter(t=>t.done).length;
+  document.getElementById('taskProgress').textContent=`${done}/${STATE.tasks.length}`;
+}
+function editTask(i) {
+  const t=STATE.tasks[i]; const input=prompt('编辑任务：',t.text);
+  if(input!==null && input.trim()){t.text=input.trim();save();renderHome();}
+}
+function renderReminders() {
+  document.getElementById('reminderList').innerHTML = STATE.reminders.map((r,i)=>`<div class="reminder-item"><div><div class="reminder-name">${r.name}</div><div class="reminder-time">${r.time}</div></div><div class="switch ${r.on?'on':''}" onclick="toggleReminder(${i})"></div></div>`).join('');
+}
+
+// ============ 日历 ============
+function renderCalendar() {
+  const monthNames=['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+  document.getElementById('calMonth').textContent=`${currentYear}年 ${monthNames[currentMonth]}`;
+  const firstDay=new Date(currentYear,currentMonth,1).getDay();
+  const daysInMonth=new Date(currentYear,currentMonth+1,0).getDate();
+  const today=new Date();
+  const todayStr=formatDate(today.getFullYear(),today.getMonth()+1,today.getDate());
+  let html='';
+  for(let i=0;i<firstDay;i++) html+='<div></div>';
+  for(let d=1;d<=daysInMonth;d++) {
+    const ds=formatDate(currentYear,currentMonth+1,d);
+    let cls='cal-cell';
+    if(ds===selectedDate) cls+=' selected';
+    if(ds===todayStr) cls+=' today';
+    if(isInPeriod(ds)) cls+=' period';
+    if(isPeriodStart(ds)) cls+=' period-start';
+    if(isFertileDay(ds)) cls+=' fertile';
+    if(isPredictedPeriod(ds)) cls+=' predicted';
+    html+=`<div class="${cls}" onclick="selectDate('${ds}')"><span>${d}</span><span class="dot"></span></div>`;
+  }
+  document.getElementById('calBody').innerHTML=`<div class="cal-row">${html}</div>`;
+}
+function selectDate(ds) {
+  selectedDate=ds;
+  document.getElementById('periodPanel').classList.add('show');
+  document.getElementById('panelDate').textContent=`📅 ${ds}`;
+  renderCalendar();
+}
+function isInPeriod(d) { return STATE.periodRecords.some(r=>d>=r.start&&d<=r.end); }
+function isPeriodStart(d) { return STATE.periodRecords.some(r=>r.start===d); }
+function isFertileDay(d) {
+  const next=getNextPeriodDate(); if(!next) return false;
+  const nd=new Date(next); const fs=new Date(nd); fs.setDate(fs.getDate()-16); const fe=new Date(nd); fe.setDate(fe.getDate()-12);
+  return new Date(d)>=fs && new Date(d)<=fe;
+}
+function isPredictedPeriod(d) {
+  const next=getNextPeriodDate(); if(!next) return false;
+  const nd=new Date(next); const pd=new Date(nd); pd.setDate(pd.getDate()-2);
+  return Math.abs((new Date(d)-pd)/86400000)<=2 && d!==next;
+}
+function getNextPeriodDate() {
+  if(STATE.periodRecords.length===0) return null;
+  const sorted=[...STATE.periodRecords].sort((a,b)=>new Date(b.start)-new Date(a.start));
+  const last=sorted[0]; const avg=calcAvgCycle();
+  if(avg<=0) return null;
+  const next=new Date(last.start); next.setDate(next.getDate()+avg);
+  return formatDate(next.getFullYear(),next.getMonth()+1,next.getDate());
+}
+function markPeriodStart() {
+  if(!selectedDate) return;
+  if(STATE.periodRecords.some(r=>selectedDate>=r.start&&selectedDate<=r.end)){toast('该日期已在记录中');return;}
+  STATE.periodRecords.push({start:selectedDate,end:selectedDate}); save(); renderCalendar(); renderAnalysis(); toast('✅ 经期开始已记录，现在点结束日期→"设为经期结束"');
+}
+function markPeriodEnd() {
+  if(!selectedDate) return;
+  const rec=STATE.periodRecords.find(r=>r.start===r.end);
+  if(!rec){toast('请先点"设为经期开始"');return;}
+  if(selectedDate<rec.start){toast('结束日期不能早于开始日期');return;}
+  rec.end=selectedDate; save(); renderCalendar(); renderAnalysis(); toast('✅ 经期记录完成！');
+}
+function markSingleDay() {
+  if(!selectedDate) return;
+  STATE.periodRecords.push({start:selectedDate,end:selectedDate}); save(); renderCalendar(); renderAnalysis(); toast('✅ 已标记为单天经期');
+}
+function clearSelectedDate() {
+  if(!selectedDate) return;
+  STATE.periodRecords=STATE.periodRecords.filter(r=>!(selectedDate>=r.start&&selectedDate<=r.end));
+  save(); renderCalendar(); renderAnalysis(); toast('已清除该天记录');
+}
+function clearAllPeriods() {
+  if(confirm('确定清除所有经期记录？')){STATE.periodRecords=[];selectedDate=null;save();renderCalendar();renderAnalysis();toast('已清除全部记录');}
+}
+function changeMonth(dir) {
+  currentMonth+=dir;
+  if(currentMonth<0){currentMonth=11;currentYear--;}
+  if(currentMonth>11){currentMonth=0;currentYear++;}
+  renderCalendar();
+}
+function calcAvgCycle() {
+  if(STATE.periodRecords.length<2) return 28;
+  const sorted=[...STATE.periodRecords].sort((a,b)=>new Date(a.start)-new Date(b.start));
+  let total=0,count=0;
+  for(let i=1;i<sorted.length;i++){total+=Math.round((new Date(sorted[i].start)-new Date(sorted[i-1].start))/86400000);count++;}
+  return Math.round(total/count);
+}
+function calcAvgDuration() {
+  if(STATE.periodRecords.length===0) return 0;
+  let total=0; STATE.periodRecords.forEach(r=>{total+=Math.round((new Date(r.end)-new Date(r.start))/86400000)+1;});
+  return Math.round(total/STATE.periodRecords.length);
+}
+function renderAnalysis() {
+  document.getElementById('cycleAvg').textContent=calcAvgCycle();
+  document.getElementById('durationAvg').textContent=calcAvgDuration()||'--';
+  let regularity='--';
+  if(STATE.periodRecords.length>=3){
+    const cycles=[]; const sorted=[...STATE.periodRecords].sort((a,b)=>new Date(a.start)-new Date(b.start));
+    for(let i=1;i<sorted.length;i++) cycles.push(Math.round((new Date(sorted[i].start)-new Date(sorted[i-1].start))/86400000));
+    const variance=Math.max(...cycles)-Math.min(...cycles);
+    regularity=variance<=3?'很规律✅':variance<=7?'基本规律':'不规律⚠️';
+  }
+  document.getElementById('regularity').textContent=regularity;
+  const next=getNextPeriodDate();
+  if(next){
+    const nd=new Date(next); const today=new Date(); today.setHours(0,0,0,0); nd.setHours(0,0,0,0);
+    const diff=Math.round((nd-today)/86400000);
+    document.getElementById('nextPeriodDate').textContent=next;
+    document.getElementById('nextPeriodCountdown').textContent=diff>0?`还有 ${diff} 天`:diff===0?'就是今天！':'已过 '+Math.abs(diff)+' 天';
+  } else { document.getElementById('nextPeriodDate').textContent='尚未记录'; document.getElementById('nextPeriodCountdown').textContent=''; }
+  const sorted=[...STATE.periodRecords].sort((a,b)=>new Date(b.start)-new Date(a.start)).slice(0,6);
+  document.getElementById('periodHistory').innerHTML=sorted.map(r=>`<div class="history-item"><span>${r.start} ~ ${r.end}</span><span>${Math.round((new Date(r.end)-new Date(r.start))/86400000)+1}天</span></div>`).join('')||'<div style="font-size:12px;color:#aaa">暂无记录</div>';
+}
+
+// ============ 食谱 ============
+function loadRecipe() {
+  const idx=document.getElementById('recipeSelect').value;
+  const r=RECIPES[idx];
+  document.getElementById('recipeContent').innerHTML=r.meals.map(m=>`<div class="meal-section"><div class="meal-header"><span class="meal-icon">${m.icon}</span><span class="meal-name">${m.name}</span><span class="meal-time">${m.time}</span></div><div>${m.foods.map(f=>`<span class="food-tag">${f}</span>`).join('')}</div></div>`).join('');
+}
+function randomRecipe(){const i=Math.floor(Math.random()*RECIPES.length);document.getElementById('recipeSelect').value=i;loadRecipe();toast('🎲 '+RECIPES[i].name);}
+
+// ============ 选题 ============
+function renderTopics(filter) {
+  const cats=[{id:'all',name:'全部'},{id:'science',name:'🔥 科普'},{id:'recipe',name:'🍳 食谱'},{id:'life',name:'🌿 生活'},{id:'story',name:'💕 故事'},{id:'myth',name:'🚫 辟谣'},{id:'series',name:'📖 系列'}];
+  document.getElementById('topicFilters').innerHTML=cats.map(c=>`<div class="filter-tab ${filter===c.id?'active':''}" onclick="renderTopics('${c.id}')">${c.name}</div>`).join('');
+  const list=filter==='all'?TOPICS:TOPICS.filter(t=>t.cat===filter);
+  document.getElementById('topicList').innerHTML=list.map((t,i)=>`<div class="topic-card" onclick="this.querySelector('.topic-body').classList.toggle('open')"><div class="topic-header"><span class="topic-cat cat-${t.cat}">${t.catName}</span><span class="topic-title">${t.title}</span>${t.diff?`<span class="difficulty diff-${t.diff}">${t.diff==='beginner'?'入门':t.diff==='intermediate'?'进阶':'深入'}</span>`:''}</div><div class="topic-body"><div class="topic-script">${t.script}</div><button class="copy-btn" onclick="event.stopPropagation();navigator.clipboard.writeText('${t.title}\n\n${t.script}');toast('已复制标题+脚本')">📋 复制标题+脚本</button></div></div>`).join('');
+}
+
+// ============ 知识 ============
+function renderKnowledge() {
+  document.getElementById('knowledgeList').innerHTML=KNOWLEDGE.map(k=>`<div class="knowledge-card"><h4>${k.title}${k.diff?`<span class="difficulty diff-${k.diff}">${k.diff==='beginner'?'入门':k.diff==='intermediate'?'进阶':'深入'}</span>`:''}</h4><p>${k.content}</p></div>`).join('');
+  document.getElementById('complianceList').innerHTML=COMPLIANCE.map(c=>`<div class="compliance-item"><span class="wrong">❌ ${c.wrong}</span> → <span class="right">✅ ${c.right}</span></div>`).join('');
+}
+
+// ============ 食材 ============
+function renderFoods() {
+  Object.keys(FOODS).forEach(key=>{
+    const el=document.getElementById('food'+key.charAt(0).toUpperCase()+key.slice(1));
+    if(el) el.innerHTML=FOODS[key].map(f=>`<div class="food-item ${key==='bad'?'bad':key==='caution'?'caution':''}"><span>${f.e}</span>${f.n}</div>`).join('');
+  });
+}
+
+// ============ 数据页 ============
+function renderData() {
+  document.getElementById('dFans').textContent=STATE.fans;
+  document.getElementById('dViews').textContent=STATE.views;
+  document.getElementById('dComplete').textContent=STATE.complete+'%';
+  const fp=Math.min(STATE.fans/1000*100,100);
+  document.getElementById('fanProgress').style.width=fp+'%';
+  document.getElementById('fanPct').textContent=Math.round(fp)+'%';
+  document.getElementById('postProgress').style.width=Math.min(STATE.posts/20*100,100)+'%';
+  document.getElementById('postPct').textContent=Math.min(STATE.posts/20*100,100).toFixed(0)+'%';
+}
+function exportData(){const b=new Blob([JSON.stringify({version:'1.0',exportDate:new Date().toISOString(),state:STATE},null,2)],{type:'application/json'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='pcos_backup.json';a.click();URL.revokeObjectURL(u);toast('已导出 ✅');}
+function importData(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{try{const d=JSON.parse(ev.target.result);Object.assign(STATE,d.state||d);save();renderHome();toast('已恢复 ✅');}catch{toast('格式错误');}};r.readAsText(f);e.target.value='';}
+function resetAllData(){if(confirm('⚠️ 确定重置所有数据？此操作不可恢复！')){localStorage.clear();location.reload();}}
+
+// ============ AI 功能 ============
+function renderAI() {
+  const key=STATE.apiKey;
+  document.getElementById('apiKeyInput').value=key;
+  document.getElementById('apiKeyInput').type=key?'password':'password';
+  if(key) {
+    document.getElementById('apiStatus').innerHTML='<span style="color:green">✅ Key已保存</span> | <a href="#" onclick="event.preventDefault();testConnection()" style="color:var(--pomegranate-600)">测试连接</a> | <a href="#" onclick="event.preventDefault();STATE.apiKey=\"\";save();renderAI();toast(\"已清除\")" style="color:#c0392b">清除</a>';
+  } else {
+    document.getElementById('apiStatus').innerHTML='<span style="color:#c0392b">⚠️ 未配置</span> | 免费申请: <a href="https://platform.deepseek.com" target="_blank" style="color:var(--pomegranate-600)">platform.deepseek.com</a>';
+  }
+}
+function saveApiKey() {
+  const key=document.getElementById('apiKeyInput').value.trim();
+  if(!key){toast('请输入API Key');return;}
+  if(!key.startsWith('sk-')){toast('Key格式错误，应以sk-开头');return;}
+  STATE.apiKey=key; save(); renderAI(); toast('✅ Key已保存（仅存本地）');
+}
+function toggleKeyVisibility() {
+  const inp=document.getElementById('apiKeyInput');
+  inp.type=inp.type==='password'?'text':'password';
+}
+async function testConnection() {
+  if(!STATE.apiKey){toast('请先保存API Key');return;}
+  showToast('测试中...');
+  try {
+    const res=await fetch('https://api.deepseek.com/v1/chat/completions',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Authorization':'Bearer '+STATE.apiKey},
+      body:JSON.stringify({model:'deepseek-chat',messages:[{role:'user',content:'hi'}],max_tokens:5})
+    });
+    if(res.ok){toast('✅ 连接成功！AI功能可用');document.getElementById('apiStatus').innerHTML='<span style="color:green;font-weight:700">🟢 AI在线</span>';}
+    else{const d=await res.json().catch(()=>({}));toast('❌ 错误 '+res.status+': '+(d.error?.message||'未知'));}
+  } catch(e) { toast('❌ 网络错误，请检查CORS或换浏览器'); }
+}
+async function callAI(prompt, systemPrompt) {
+  if(!STATE.apiKey){toast('请先配置API Key');return null;}
+  try {
+    const res=await fetch('https://api.deepseek.com/v1/chat/completions',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Authorization':'Bearer '+STATE.apiKey},
+      body:JSON.stringify({model:'deepseek-chat',messages:[{role:'system',content:systemPrompt||'你是多囊饮食调理助手，擅长短视频脚本写作。'},{role:'user',content:prompt}],max_tokens:2000,temperature:0.8})
+    });
+    if(!res.ok){const d=await res.json().catch(()=>({}));toast('❌ '+res.status+': '+(d.error?.message||'API错误'));return null;}
+    const d=await res.json(); return d.choices[0].message.content;
+  } catch(e) { toast('❌ 网络错误'); return null; }
+}
+async function generateTopic() {
+  const prompt=document.getElementById('topicPrompt').value.trim()||'帮我生成3个多囊爆款选题，每个配30秒口播脚本';
+  const sys='你是抖音短视频编导专家，擅长多囊/健康领域爆款内容。输出格式：每个选题包含【标题】【钩子开头】【正文脚本】【结尾引导关注】。';
+  const result=await callAI(prompt,sys);
+  if(result) showAIResult(result);
+}
+async function batchGenerate() {
+  const prompt='帮我生成一周7天的抖音选题排期表，每天1个选题，方向轮换（科普/食谱/故事/辟谣/生活/数据/互动），每个选题只给标题+一句话脚本概要。格式：Day1-7排列。';
+  const sys='你是短视频选题策划专家。';
+  const result=await callAI(prompt,sys);
+  if(result) showAIResult(result);
+}
+async function viralStyle() {
+  const prompt=document.getElementById('topicPrompt').value.trim()||'多囊胰岛素抵抗';
+  const sys='你擅长制造抖音爆款开头。为每个选题写3种爆款开头钩子（悬念式/反常识式/共情式），然后给完整60秒口播脚本。语气要像闺蜜聊天，有网感。';
+  const result=await callAI(prompt,sys);
+  if(result) showAIResult(result);
+}
+async function generateRecipe() {
+  const prompt=document.getElementById('recipePrompt').value.trim()||'我是多囊，今天想要抗炎+补铁的三餐方案，不要海鲜';
+  const sys='你是注册营养师，专长多囊饮食。根据用户描述生成今日三餐+2次加餐方案，每餐标注：食材、做法、为什么适合多囊（营养亮点）。';
+  const result=await callAI(prompt,sys);
+  if(result) showAIResult(result);
+}
+async function smartMeal() {
+  // 自动判断经期阶段
+  const next=getNextPeriodDate();
+  let stage='卵泡期';
+  if(STATE.periodRecords.length>0){
+    const sorted=[...STATE.periodRecords].sort((a,b)=>new Date(b.start)-new Date(a.start));
+    const lastEnd=new Date(sorted[0].end); const today=new Date();
+    const diff=Math.round((today-lastEnd)/86400000);
+    if(diff>=0&&diff<=7) stage='月经期';
+    else if(diff>7&&diff<=14) stage='卵泡期';
+    else if(diff>14&&diff<=21) stage='排卵期';
+    else if(diff>21) stage='黄体期';
+  }
+  const prompt=`请根据我当前的「${stage}」阶段，为我定制今天的三餐+加餐方案。我是多囊体质。要求：低GI、抗炎、好操作。`;
+  const sys='你是多囊营养专家。根据女性月经周期四阶段（月经期/卵泡期/排卵期/黄体期）的营养需求配餐。月经期补铁暖宫，卵泡期高蛋白，排卵期抗氧化，黄体期补镁B6。';
+  const result=await callAI(prompt,sys);
+  if(result) showAIResult(result);
+}
+async function antiInflammatory() {
+  const prompt='帮我设计一天极致抗炎饮食方案（三餐+加餐），食材要容易买到，做法简单，适合多囊体质。';
+  const sys='你是抗炎饮食专家。推荐富含Omega-3、花青素、姜黄素、类黄酮的食材组合。避免精炼种子油、高糖、加工食品。';
+  const result=await callAI(prompt,sys);
+  if(result) showAIResult(result);
+}
+async function analyzePeriod() {
+  if(STATE.periodRecords.length<2){toast('请先在日历页记录至少2次经期');return;}
+  const data=STATE.periodRecords.slice(-6).map(r=>({start:r.start,end:r.end})).reverse();
+  const prompt=`以下是我的经期记录（最近6次）：${JSON.stringify(data)}。请分析：1.周期规律性 2.可能的原因 3.调理建议 4.下次经期预测`;
+  const sys='你是妇科内分泌专家。基于用户经期数据分析PCOS患者的周期规律，给出专业但易懂的建议。语气温暖鼓励。';
+  const result=await callAI(prompt,sys);
+  if(result) showAIResult(result);
+}
+async function analyzeFoodImage(e) {
+  const file=e.target.files[0]; if(!file) return;
+  if(!STATE.apiKey){toast('请先配置API Key');return;}
+  // 转base64
+  const reader=new FileReader();
+  reader.onload=async()=>{
+    const base64=reader.result.split(',')[1];
+    showToast('AI识别中...');
+    try {
+      const res=await fetch('https://api.deepseek.com/v1/chat/completions',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Authorization':'Bearer '+STATE.apiKey},
+        body:JSON.stringify({model:'deepseek-chat',messages:[{role:'system',content:'你是食物识别专家。识别食物后评估其对多囊的友好度（1-10分），说明原因，给出替代建议。'},{role:'user',content:[{type:'text',text:'请识别这张照片里的食物，并评估对多囊体质的友好度，给出评分和改进建议。'},{type:'image_url',image_url:{url:'data:image/jpeg;base64,'+base64}}]}],max_tokens:1500})
+      });
+      if(res.ok){const d=await res.json();showAIResult(d.choices[0].message.content);}
+      else{toast('❌ 识别失败');}
+    } catch(err){toast('❌ 网络错误');}
+  };
+  reader.readAsDataURL(file);
+}
+async function sendChat() {
+  const input=document.getElementById('chatInput');
+  const msg=input.value.trim(); if(!msg) return;
+  STATE.chatHistory.push({role:'user',content:msg});
+  input.value='';
+  renderChat();
+  const sys='你是多囊饮食调理助手，帮助内容创作者了解多囊营养学、抖音运营、食谱搭配。回答专业但不说教，像闺蜜一样聊天。';
+  const result=await callAI(msg,sys);
+  if(result){STATE.chatHistory.push({role:'assistant',content:result});save();renderChat();}
+}
+function renderChat() {
+  const h=document.getElementById('chatHistory');
+  h.innerHTML=STATE.chatHistory.slice(-10).map(m=>`<div style="margin-bottom:8px;padding:6px 10px;border-radius:8px;${m.role==='user'?'background:var(--pomegranate-100);text-align:right':'background:#f0f8ff'}">${m.content.length>200?m.content.substring(0,200)+'...':m.content}</div>`).join('');
+  h.scrollTop=h.scrollHeight;
+}
+function showAIResult(text) {
+  document.getElementById('aiResult').style.display='block';
+  document.getElementById('aiResultContent').textContent=text;
+  document.getElementById('aiResult').scrollIntoView({behavior:'smooth'});
+}
+function copyAiResult() {
+  const text=document.getElementById('aiResultContent').textContent;
+  navigator.clipboard.writeText(text).then(()=>toast('已复制 ✅'));
+}
+
+// ============ 初始化 ============
+function init() {
+  document.getElementById('statusTime').textContent=new Date().toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'});
+  document.getElementById('recipeSelect').innerHTML=RECIPES.map((r,i)=>`<option value="${i}">${r.name}</option>`).join('');
+  loadRecipe();
+  renderHome();
+  renderFoods();
+  renderKnowledge();
+  renderTopics('all');
+  renderData();
+}
+init();
+</script>
+</body>
+</html>
